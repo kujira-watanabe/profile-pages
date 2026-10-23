@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>実例集 判断編</title><style>:root{
+  --bg:#ffffff; --fg:#222222; --muted:#666666;
+  --accent:#E08A3C; --accent-soft:#FBEFE2;
+  --ai-bg:#F3F3F3; --me-bg:#FBEFE2; --line:#DDDDDD;
+  --note-bg:#FFFBF5; --note-border:#E08A3C;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#1B1B1B; --fg:#EDEDED; --muted:#A8A8A8;
+    --accent:#E8A05C; --accent-soft:#3A2A1C;
+    --ai-bg:#2A2A2A; --me-bg:#3A2A1C; --line:#444444;
+    --note-bg:#262320; --note-border:#E8A05C;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1B1B1B; --fg:#EDEDED; --muted:#A8A8A8;
+  --accent:#E8A05C; --accent-soft:#3A2A1C;
+  --ai-bg:#2A2A2A; --me-bg:#3A2A1C; --line:#444444;
+  --note-bg:#262320; --note-border:#E8A05C;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--fg);
+  font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic","BIZ UDPGothic","Noto Sans JP",sans-serif;
+  font-size:15px; line-height:1.9; font-feature-settings:"palt";
+}
+.page{max-width:760px; margin:0 auto; padding:40px 16px 64px}
+header{border-bottom:2px solid var(--accent); padding-bottom:16px; margin-bottom:32px}
+.kicker{color:var(--muted); font-size:13px; margin:0 0 6px}
+h1{font-size:26px; line-height:1.4; margin:0 0 6px}
+.sub{color:var(--muted); font-size:14px; margin:0}
+h2{font-size:18px; margin:40px 0 12px; padding-left:12px; border-left:4px solid var(--accent); line-height:1.5}
+p{margin:0 0 1em}
+.lead{font-size:15px}
+.first{
+  background:var(--accent-soft); border-radius:8px; padding:16px 20px; margin:12px 0 8px;
+  font-size:17px; font-weight:700;
+}
+.chat{display:flex; flex-direction:column; gap:20px; margin:16px 0}
+.msg{display:flex; flex-direction:column; max-width:92%}
+.msg .who{font-size:12px; color:var(--muted); margin:0 0 4px 8px; letter-spacing:.04em}
+.msg .bubble{border-radius:14px; padding:14px 18px}
+.msg .bubble p:last-child{margin-bottom:0}
+.msg.ai{align-self:flex-start}
+.msg.ai .bubble{background:var(--ai-bg); border-top-left-radius:4px}
+.msg.me{align-self:flex-end; align-items:flex-end}
+.msg.me .who{margin:0 8px 4px 0}
+.msg.me .bubble{background:var(--me-bg); border-top-right-radius:4px; font-weight:600}
+.bubble ul,.bubble ol{margin:.4em 0 .8em; padding-left:1.4em}
+.bubble li{margin:.2em 0}
+.bubble strong{font-weight:700}
+.note{
+  background:var(--note-bg); border-left:4px solid var(--note-border);
+  border-radius:0 8px 8px 0; padding:12px 16px; margin:4px 0 4px;
+  font-size:14px; line-height:1.8;
+}
+.note .label{display:inline-block; font-size:12px; font-weight:700; color:var(--accent); letter-spacing:.06em; margin-bottom:4px}
+.note p:last-child{margin-bottom:0}
+.summary ul{padding-left:1.3em}
+.summary li{margin:.4em 0}
+.close{
+  margin-top:24px; padding:20px 24px; border:1px solid var(--line); border-radius:8px;
+}
+.close p{margin:0 0 .6em}
+.close p:last-child{margin:0; font-weight:700}
+footer{margin-top:40px; color:var(--muted); font-size:12px; border-top:1px solid var(--line); padding-top:12px}
+@media print{
+  body{font-size:11.5pt}
+  .page{max-width:none; padding:0}
+  .msg{max-width:100%}
+  h2{break-after:avoid}
+  .msg,.note{break-inside:avoid}
+  @page{size:A4; margin:18mm 16mm}
+}
+.msg .who .t{margin-left:8px; font-weight:400; opacity:.7}
+.bubble ul,.bubble ol{margin:.4em 0 .8em}
+</style></head><body><div class="page">
+<p style="margin:0 0 16px;font-size:13px"><a href="./#examples" style="color:var(--accent)">← 実践キットに戻る</a></p>
+<header><p class="kicker">『AIは、3行でいい。』実践キット　2／7</p><h1>生のやり取り実例集　判断編</h1><p class="sub">ツールの名前を、AIに決めてもらわずに決めた記録</p></header>
+<h2>この場面で困っていたこと</h2><p>この本の原稿をKindle用に組むために、自分で作ったツールがあります。その名前が「KindleTypesetter」で、自分でも覚えられない。<br>名前を変えたい。でも、どんな名前がいいのかは決まっていない。</p>
+<p>第10章に書いた「AIに決めてもらわず、自分で決められる状態を作る」を、自分のツールの名前でやることになった記録です。<br>5時間、十数個の候補を出しては消しました。</p>
+<h2>最初に投げた言葉</h2><p>3行の形になっていません。「覚えられない」と「いい名前が欲しい」だけです。</p><div class="first">いまさらだけど、KindleTypeSetterという名前が覚えられないので、なんかいいネーミングが欲しいなー。</div>
+<h2>やり取り</h2><p>発言順に載せています。著者の発言は原文のままです。AIの返事は、他社の製品名や言い切りを一部やわらげています。この話題と関係のない作業の指示や、事務的なやり取りは省き、長い区間は「解説」でまとめています。</p>
+<div class="chat">
+<div class="msg me"><div class="who">渡邉<span class="t">15:59</span></div><div class="bubble"><p>いまさらｄかえど、ＫｉｎｄｌｅＴｙｐｅＳｅｔｔｅｒという名前が覚えられないので、<br>なんかいいネーミングが欲しいなー。</p></div></div>
+<div class="msg ai"><div class="who">AI<span class="t">16:01</span></div><div class="bubble"><p><strong>ネーミング案</strong></p>
+<p>ツールの本質は「組版用MDを、Kindleで崩れない縦書き本にする」ことなので、その言葉から取りました。</p>
+<ul><li><strong>タテグミ（Tategumi）</strong>: 縦組み。いちばん短くて、何のツールかが名前でわかります。exe名も <code>Tategumi.exe</code> で打ちやすいです。推奨です。</li><li><strong>くみ助（Kumisuke）</strong>: 組版の助っ人。親しみやすく、「My秘書」「ProjectPit」と並べても違和感がありません。</li><li><strong>本組（Hongumi）</strong>: 印刷用語で「最終の本番組版」の意味です。少し渋めで、本づくりの道具らしさが出ます。</li><li><strong>ページ職人</strong>: 何をするかは伝わりますが、長めで英字化しにくいです。</li></ul>
+<p>決めていただければ、改名は別ラウンドで行います。改名で変わるのは、フォルダ名やexe名、ショートカット、設定ファイルの保存先（今の設定は引き継ぎます）、台帳と仕様書です。</p></div></div>
+<div class="note"><span class="label">解説</span><p>最初の一言は「名前が覚えられない」だけ。AIは、ツールの機能から4案を出してきました。ここから「そこじゃない」が始まります。</p></div>
+<div class="msg me"><div class="who">渡邉<span class="t">16:04</span></div><div class="bubble"><p>いや、実は縦組みだけじゃなくて横組みでも可能にしているので、、、「組」を軸にするとピンとこないよ。<br>Kindle本ということとエディタ、ビューアー、複数ファイル、プロジェクト、、、イメージはObsidianっぽいよね、IDE（総合開発環境）ならぬIKE（総合Kindleエディタ）とかでもいいけど、僕っぽさがないんだよねぇ。<br>知人のブランドもあるといいのになぁ。</p></div></div>
+<div class="msg ai"><div class="who">AI<span class="t">16:05</span></div><div class="bubble"><p>なるほど、「組」は縦書き専用に聞こえてしまいますね。それなら、機能名ではなく「あなたのブランド」から取る方向で考え直しました。</p>
+<p><strong>手がかりになる「あなたらしさ」</strong></p>
+<ul><li>屋号は「くじらAIワークス」で、Brain Dockのアイコンもクジラです。</li><li>自作ツールには既に「AI Brain Dock」「VisualDock」と、Dock（船着き場）の系譜があります。クジラが着くドック、という世界観がもうできています。</li><li>Kindle本は『AIは、3行でいい。』で、ここから「3行」というモチーフも取れます。</li></ul>
+<p><strong>案（ブランドとして成立する順）</strong></p>
+<ul><li><strong>BookDock（ブックドック）</strong>: Dockシリーズの3本目として「本を作って係留する場所」。Brain Dock＝頭の中、Visual Dock＝見せ方、Book Dock＝本、と並びが綺麗で、Obsidian的な「エディタ＋ビューア＋複数ファイル＋プロジェクト」の器という意味にも合います。exe名は <code>BookDock.exe</code>。</li><li><strong>くじら書房（Kujira Shobo）</strong>: ツール名であり、そのままKindle本の奥付に書ける出版レーベル名にもなります。知人のブランドのように「ブランド＝ツール名」にしたいなら、これが一番あなたらしいです。英字は <code>KujiraShobo</code> か <code>KujiraPress</code>。</li><li><strong>Pod（ポッド）／WhalePod</strong>: クジラの群れを Pod と呼びます。章ファイルの群れをまとめて1冊にする、という意味と、くじらの世界観の両方が入ります。短くて呼びやすい反面、意味が伝わるまで説明が要ります。</li><li><strong>三行堂（Sangyodo）</strong>: 『AIは、3行でいい。』から。老舗の書房のような響きで覚えやすいですが、3行という制約が本の内容に縛られます。</li></ul>
+<p><strong>おすすめ</strong></p>
+<p>ツール名は <strong>BookDock</strong>、Kindle本のレーベル名として <strong>くじら書房</strong> を奥付に使う、という2層構えです。ツール群は「〇〇 Dock」で揃い、著作は「くじら書房」で揃うので、ブランドの束が自然にできます。1つに絞るなら、ツールにも本にも使える「くじら書房」です。</p>
+<p>どれか気に入るものがあれば、その名前で改名ラウンドと仕様書の名称を合わせます。仕様書は実装係のAIが作成中で、名前が決まるまでは現行名で書かせています。</p></div></div>
+<div class="note"><span class="label">解説</span><p>「組」はピンとこない、と返しただけで、AIは判断軸を「機能」から「あなたのブランド」に切り替えました。何が違うのかを説明しきれなくても、違うと言えば軸が動きます。</p></div>
+<div class="msg me"><div class="who">渡邉<span class="t">16:09</span></div><div class="bubble"><p>BookDockでいこう</p></div></div>
+<div class="note"><span class="label">解説</span><p>ここで一度「BookDock」に決めています。別の相談（著者名をどうするか）をはさんで、10分後。</p></div>
+<div class="msg me"><div class="who">渡邉<span class="t">16:21</span></div><div class="bubble"><p>BookDockって、ふつうすぎない？</p></div></div>
+<div class="msg ai"><div class="who">AI<span class="t">16:21</span></div><div class="bubble"><p>正直に言うと、普通です。「本を扱うツール」以上の個性がなく、同名のサービスや製品も探せば出てきそうな名前です。Dockの系譜に乗せる発想は良かったのですが、「本」＋「Dock」だけでは「あなたらしさ」が乗っていません。</p>
+<p><strong>もう一段、くじらに寄せた案</strong></p>
+<ul><li><strong>本鯨（ほんくじら／HonKujira）</strong>: 「本」と「鯨」の造語で、検索すればほぼ唯一。くじらAIワークスの人が作った本の道具、が名前だけで伝わります。ロゴも本を背負ったクジラで作れます。落ち着いた響きで、実務書の著者の道具としても違和感がありません。</li><li><strong>Bookjira（ブックジラ）</strong>: Book と Kujira の合成。響きが強く一度で覚えられますが、ゴジラの語感が乗るので、少し遊びが強めです。</li><li><strong>Kujira Dock（くじらドック）</strong>: Dock系譜を保ちつつ「くじら」を前に出す案。Brain Dock・Visual Dock と並べたときに、こちらだけ主語がくじらになるのが少し不揃いです。</li><li><strong>Kujira BookDock</strong>: 「Adobe Acrobat」のように、ブランド名＋製品名の2語構成。BookDockを残しつつ、くじらを冠にします。長くなりますが、今後のツール全部に「Kujira」を冠する運用にすれば、それ自体がブランドの束になります。</li></ul>
+<p><strong>おすすめ</strong></p>
+<p>「本鯨（ほんくじら）」です。短い、唯一、あなたのもの、と3拍子そろっています。英字は <code>HonKujira</code>、exe名も <code>HonKujira.exe</code> で打ちやすいです。ブランドの束として育てるなら、ツール群の冠を「くじら」に統一する方向（Kujira BookDock 方式）も並行して検討できます。</p></div></div>
+<div class="msg me"><div class="who">渡邉<span class="t">16:25</span></div><div class="bubble"><p>くじら～にこだわらなくてもいいんだけどなぁ。。。<br>なべ～でも<br>ほかのでも。<br>よびやすいほうがいいんだよ</p>
+<p>知人にProjectPitを見せたときに、「これをうるならインフルエンサーに使ってもらって『いいツールだよ』っていってもらうのが一番うれそう」っていわれたので、インフルエンサーが口に出してためらわないものがいいよね</p></div></div>
+<div class="note"><span class="label">解説</span><p>転換点です。「くじらにこだわらなくていい」「呼びやすいほうがいい」「インフルエンサーが口に出してためらわないもの」。ここで初めて、判断の軸が著者自身の言葉で出てきました。AIが出した軸（ブランド）を、著者が言い直しています。</p></div>
+<div class="msg ai"><div class="who">AI<span class="t">16:25</span></div><div class="bubble"><p>わかりました。判断軸を「くじら」から「口に出しやすい・インフルエンサーが言ってためらわない」に切り替えます。その前提だと、意味は「本を作る」側から取り、音は3〜4文字のカタカナ、が一番強いです。</p>
+<p><strong>候補</strong></p>
+<ul><li><strong>ツヅル（Tsuzuru）</strong>: 「綴る」。本を書く行為そのもので、「ツヅルで書いた」「ツヅルで1冊にした」と自然に言えます。3文字で、文学的すぎず、英字も打ちやすいです。おすすめです。</li><li><strong>タバネ（Tabane）</strong>: 「束ねる」。章ファイルを束ねて1冊にする、というツールの本質に一番近い言葉です。「タバネで束ねた」は口にしやすく、少し職人っぽい響きです。</li><li><strong>カケル（Kakeru）</strong>: 「書ける・駆ける」。前向きで誰でも言えますが、同名の製品やサービスが多く、検索で埋もれやすいです。</li><li><strong>ホンダス（Hondas）</strong>: 「本、出す」。一番キャッチーで、「ホンダスで本出した」は動画映えします。ただし遊びが強く、自動車メーカーと音が被るので、実務書の著者の道具としては軽く見える恐れがあります。</li></ul>
+<p>「なべ」系は、「ナベブック」だと鍋のイメージが先に来て、本のツールだと伝わりにくいので外しました。</p>
+<p><strong>1つ注意</strong></p>
+<p>売ることを考えるなら、名前に「Kindle」を入れないでください。Amazonの商標なので、製品名に使うと配布や販売の段階でひっかかります。今の「KindleTypesetter」を変えるのは、その意味でも正解です。</p>
+<p><strong>おすすめ</strong></p>
+<p>「ツヅル」です。決めていただければ、同名の製品・商標・ドメインが既にないかを検索で確認してから改名に入ります。</p></div></div>
+<div class="msg me"><div class="who">渡邉<span class="t">16:31</span></div><div class="bubble"><p>ツヅル　ーBookDockー　とかってする？うーん、ほかのAIにも聞いてみて</p></div></div>
+<div class="msg ai"><div class="who">AI<span class="t">16:32</span></div><div class="bubble"><p>ほかのAIからの返事はまだです。先に「ツヅル」の衝突を調べた結果をお伝えします。結論として、<strong>ツヅルは似た名前が多く、特に同じ執筆ツールの領域に近い名前があるようです。</strong></p>
+<p><strong>「ツヅル」と重なりそうなもの</strong></p>
+<ul><li>縦書きに対応した日本語の執筆ソフトに、名前も用途もかなり近いものがあるようです。いちばん気をつけたいところです。</li><li>メモアプリや対話型AIのサービスにも、同じ読みの名前が見つかりました。</li><li>ほかにも、手紙の代行サービスや日本酒、和装本のシリーズなどに「つづる」があります。</li></ul>
+<p>インフルエンサーが「ツヅルで作った」と言っても、検索した人がそちらの執筆ソフトやメモアプリに流れるかもしれず、呼びやすさの利点が薄れます。「ツヅル ーBookDockー」の2層にしても、検索で勝てないのは同じです。</p>
+<p><strong>他の候補の衝突</strong></p>
+<ul><li>タバネ: 同名のアプリ・サービスは見つかりませんでした。検索で唯一になれる可能性が高いです。</li><li>ホンダス: 自動車のHondaのアプリ群に埋もれそうです。不採用が妥当だと思います。</li></ul>
+<p><strong>現時点の私の推し</strong></p>
+<p>「タバネ（束ねる）」です。章ファイルを束ねて1冊にする、というツールの本質に一番近く、3文字で言いやすく、同名がありません。2層にするなら「タバネ ーBookDockー」で、呼び名と説明が両立します。</p>
+<p>ほかの2人のAIの意見が届いたら、合わせてお伝えします。</p></div></div>
+<div class="note"><span class="label">解説</span><p>「ツヅル」は候補に上がった直後、同名・類似の製品が見つかって消えました。ほかのAIの意見も「ツヅルは不採用」で一致。残った候補は「タバネ」と「ホンダス」。</p></div>
+<div class="msg me"><div class="who">渡邉<span class="t">17:01</span></div><div class="bubble"><p>AI的にはどれ？</p></div></div>
+<div class="msg ai"><div class="who">AI<span class="t">17:01</span></div><div class="bubble"><p><strong>タバネ</strong>です。理由は3つです。</p>
+<ul><li>知人基準（インフルエンサーが口に出してためらわない）は両方とも満たしますが、その先の「聞いた人が検索して辿り着けるか」でタバネが勝ちます。ホンダスは検索するとHondaのアプリ群が混ざります。呼びやすさは入口で、検索一意は出口です。出口で取りこぼすと紹介の効果が消えます。</li><li>ツールの中身と名前が一致しています。章ファイルを束ねて1冊にする、が機能そのものなので、名前を聞いた人が「何をするツールか」を説明なしに想像できます。ホンダスは「本を出す」という結果を言っていて、道具の像が浮かびません。</li><li>あなたの立ち位置に合います。実務書の著者で、企業向けの仕事もしている人の道具として、タバネは真面目すぎず軽すぎず、渡邉ゆうじの語り口とも同じ温度です。ホンダスの遊びは、動画では強いですが、名刺の相手に見せる時に一段説明が要ります。</li></ul>
+<p>ホンダスを選ぶ場面があるとすれば、「売る相手が完全にインフルエンサー経由の個人だけ」「Hondaと混ざっても笑い話にできる」と割り切れる時です。今のあなたの用途はそこまで振り切っていないと見ています。</p>
+<p>タバネで行くなら、「タバネ ー本を束ねて、Kindleへ。ー」のような副題を添えると、遊びのない分を補えます。決めていただければ、調査係のAIに商標照会を頼み、通ったら改名ラウンドに入ります。</p></div></div>
+<div class="msg me"><div class="who">渡邉<span class="t">17:02</span></div><div class="bubble"><p>OK</p></div></div>
+<div class="note"><span class="label">解説</span><p>「OK」で決めました。ここから1時間半ほど、候補を出しては消す往復が続きます。この区間は要点だけ書きます。</p><ul><li>「タバネ」は、商標を調べると同じ区分で別の会社が先に出願しているようで、使うのは難しそうだとわかりました。</li><li>次の「イッサツ（一冊）」も、「イッサツ仕事人」にすると有名な時代劇の題名に近すぎる、という見立てでした。</li><li>途中で「本棚も、司書も、ゴーストライターも入れたい」と構想が広がり、名前も「道具」から「場所や人格」を探す方向に変わりました（この構想は企画編で言葉にしています）。</li><li>「カンヅメ」は、同じ言葉を使った既存の執筆ソフトがあるようで、見送りました。「おこもり」は、言葉は良くても後ろに付ける語がしっくりきませんでした。</li><li>AIが比較の中で「不採用」にしていた「デスク」に、著者がひっかかりました。出版社で編集を統括する役職の名前でもあることから、「イッサツデスク」と「カンヅメデスク」が残ります。</li></ul><p>AIの案の中から、AIが捨てたものを拾い直すこともあります。どちらも使えそうでしたが、まだ決めていません。ここで一度、名前を離れてツールのコンセプトを言葉にする作業（企画編）に入り、2時間後に戻ってきます。</p></div>
+<div class="msg me"><div class="who">渡邉<span class="t">20:30</span></div><div class="bubble"><p>HONMADE Studio　はどう？</p></div></div>
+<div class="msg ai"><div class="who">AI<span class="t">20:31</span></div><div class="bubble"><p>調査係のAIに「HONMADE Studio」の照会（商標、HUMAN MADE・HOMEMADE系との類否、既存名、ドメイン）を依頼し、台帳にも候補として記録しました。結果が届いたらお伝えします。</p>
+<p>現時点の候補は3つです。</p>
+<ul><li>HONMADE Studio（ホンメイド）: ブランド感が最も強い。読みの固定と英字主体の運用が前提。</li><li>イッサツデスク: 法的・印象・検索のすべてが綺麗。人格「デスク」が名前に入る。</li><li>カンヅメデスク: 比喩の力は強いが、既存ソフトへの配慮が続く。</li></ul></div></div>
+<div class="msg me"><div class="who">渡邉<span class="t">20:35</span></div><div class="bubble"><p>本までスタジオだよ。</p></div></div>
+<div class="msg ai"><div class="who">AI<span class="t">20:35</span></div><div class="bubble"><p>失礼しました。「HON-MADE＝本まで」ですね。「書いたものが、本まで届く」スタジオ。英語で読めば homemade（自家製＝自家出版）にも掛かっていて、さらに良い名前です。</p>
+<p><strong>読みを「ホンマデ」に直した上での評価</strong></p>
+<ul><li>「ホンマデスタジオ」「ホンマデで作った」は4音で言いやすく、聞いた人が「本まで？」と一度ひっかかるので覚えられます。</li><li>副題がそのまま名前の説明になります。例: 「原稿から、本まで。」</li><li>検索は英字「HONMADE」で一意です。カタカナ「ホンマデ」は「ホンマでっか」系の情報が混ざるので、表記は英字を主にします。</li><li>人格は「スタジオの住人」として、デスク・司書・ライターをそのまま置けます。</li></ul>
+<p>調査係のAIへの照会は読みを「ホンマデ」に訂正して送り直します。</p></div></div>
+<div class="note"><span class="label">解説</span><p>AIは「HONMADE」を「ホンメイド」と読んで調べていました。「本までスタジオだよ」の一言で、読みも意味も直っています。照会の結果は採用可で、確定の条件まで出ました。それでも、決めていません。</p></div>
+<div class="msg me"><div class="who">渡邉<span class="t">20:47</span></div><div class="bubble"><p>綴じ部屋 / TOJIBEYA<br>がいいかなー</p></div></div>
+<div class="msg ai"><div class="who">AI<span class="t">20:52</span></div><div class="bubble"><p>「綴じ部屋／TOJIBEYA」の照会結果が届きました。<strong>先行商標なし、既存名なし、ドメインは .com を含めて全て空き。商標面ではHONMADEより一段クリーン</strong>です。</p>
+<p><strong>結果の要点</strong></p>
+<ul><li>「綴じ部屋」「トジベヤ」「TOJIBEYA」「閉じ部屋」の同一・類似商標は全区分で0件。ソフト・サービス・店名も完全一致なしです。</li><li>「〇〇部屋」型は第9類・第42類に32件が別権利者で並存しており（べんきょう部屋・徹子の部屋など）、「部屋」は識別要素にならず前半の「綴じ」で区別されます。「トジ」で始まる既存登録はありません。</li><li>識別力は中〜高で、一般語の結合ですがソフト区分では造語として認められる見立てです。</li><li>ドメインは tojibeya.com・.studio・.app・.net が未登録で、.jp もほぼ空きです。</li><li>注意点は表記だけです。「綴」が常用漢字外なので「とじ部屋」「綴部屋」の揺れが出やすく、公式表記を「綴じ部屋」（送り仮名つき）に固定する運用にします。</li></ul>
+<p><strong>HONMADE Studio との比較（調査係のAIと私の見立ては一致）</strong></p>
+<ul><li>商標の障害: 綴じ部屋はなし。HONMADEは著名ブランドとの類否確認が要る。</li><li>読みの安定: 綴じ部屋は「トジベヤ」で一意。HONMADEは揺れる。</li><li>検索一意性: 綴じ部屋が上。HONMADEはhomemade・Human Madeのノイズを常に抱える。</li><li>ブランドの広がり: HONMADEが上（英字ロゴ・三重の意味・海外）。</li><li>決め手は調査係のAIの言葉どおり、「どちらの名前で自分のツールを紹介する動画を撮りたいか」です。</li></ul>
+<p>私の推しは変わらず「綴じ部屋」です。確定でよければ、アプリを閉じて合図をください。改名ラウンドに入り、仕様書・台帳・原稿担当のAIへの連絡まで行います。ドメイン tojibeya.com の取得はご自身の作業になるので、取ったら教えてください。</p></div></div>
+<div class="msg me"><div class="who">渡邉<span class="t">20:57</span></div><div class="bubble"><p>綴じ部屋で。<br>アプリも閉じたよ</p></div></div>
+<div class="msg ai"><div class="who">AI<span class="t">20:58</span></div><div class="bubble"><p>「綴じ部屋（Tojibeya）」で確定です。アプリが閉じているので、改名ラウンドを実装係のAIに着手させます。</p>
+<p>---</p></div></div>
+<div class="note"><span class="label">解説</span><p>「綴じ部屋」。5時間、候補は十数個。最後に残ったのは、AIの案ではなく著者の口から出た名前でした。AIの仕事は、候補を出すことより、出てきた名前が使えるかどうかを確かめて、比較の材料を揃えることでした。</p></div>
+</div>
+<h2>このやり取りで起きたこと</h2><div class="summary"><ul><li>最初の一言は「覚えられない」だけ。理想も判断の軸も書いていない。</li><li>判断の軸は、AIの案に「そこじゃない」と返すうちに、著者の言葉で出てきた（呼びやすい・口に出してためらわない・検索して辿り着ける）。</li><li>「決めた」あとに戻すことが3回あった（BookDock・タバネ・イッサツ）。決めてから「ふつうすぎない？」と言っていい。</li><li>AIは候補を出すだけでなく、候補が使えるかどうか（同名の製品・商標）を確かめ、比較の材料を揃えた。</li><li>最後に選んだ名前は、AIの案ではなく著者から出た。AIは、その名前が使えることを確かめた。</li></ul></div>
+<div class="close"><p>AIに「いい名前を10個出して」と頼んでいたら、10個の中から選ぶことになっていました。<br>そうではなく、AIの案に「違う」と返すたびに、自分が何を大事にしているかが言葉になっていきました。</p>
+<p>決めたのは自分です。AIは、決められる状態を作りました。</p></div>
+<footer>会話はAIとの実際のやり取りを発言順にそのまま載せています。省いたのは、この話題と関係のない作業の指示、作業の進行管理に関する事務的なやり取り、出典URL、第三者の名前です。長い区間は「解説」でまとめ、AIの返事は他社の製品名や言い切りを一部やわらげています。著者は役割の違う複数のAIを使っており、会話の相手のAIが商標などの照会を頼む先を「調査係のAI」などと表記しています。</footer>
+</div></body></html>

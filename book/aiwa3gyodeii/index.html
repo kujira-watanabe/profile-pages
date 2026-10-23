@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>『AIは、3行でいい。』実践キット</title>
+<style>
+:root{
+  --bg:#ffffff; --fg:#222222; --muted:#666666;
+  --accent:#E08A3C; --accent-soft:#FBEFE2;
+  --code-bg:#F6F6F6; --line:#DDDDDD;
+  --note-bg:#FFFBF5; --note-border:#E08A3C;
+  --line-green:#06C755;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#1B1B1B; --fg:#EDEDED; --muted:#A8A8A8;
+    --accent:#E8A05C; --accent-soft:#3A2A1C;
+    --code-bg:#2A2A2A; --line:#444444;
+    --note-bg:#262320; --note-border:#E8A05C;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1B1B1B; --fg:#EDEDED; --muted:#A8A8A8;
+  --accent:#E8A05C; --accent-soft:#3A2A1C;
+  --code-bg:#2A2A2A; --line:#444444;
+  --note-bg:#262320; --note-border:#E8A05C;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%; scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--fg);
+  font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic","BIZ UDPGothic","Noto Sans JP",sans-serif;
+  font-size:15px; line-height:1.9; font-feature-settings:"palt";
+}
+.page{max-width:760px; margin:0 auto; padding:40px 16px 64px}
+header{border-bottom:2px solid var(--accent); padding-bottom:16px; margin-bottom:24px}
+.kicker{color:var(--muted); font-size:13px; margin:0 0 6px}
+h1{font-size:26px; line-height:1.4; margin:0 0 6px}
+.sub{color:var(--muted); font-size:14px; margin:0}
+h2{font-size:20px; line-height:1.5; margin:56px 0 4px; padding-top:8px}
+h2 .num{display:inline-block; min-width:1.8em; height:1.8em; line-height:1.8em; text-align:center;
+  border-radius:50%; background:var(--accent); color:#fff; font-size:15px; margin-right:8px; vertical-align:2px}
+.what{color:var(--accent); font-weight:700; margin:0 0 16px}
+h3{font-size:16px; margin:28px 0 8px; padding-left:10px; border-left:4px solid var(--accent); line-height:1.5}
+p{margin:0 0 1em}
+a{color:var(--accent)}
+.toc{background:var(--accent-soft); border-radius:8px; padding:16px 20px; margin:0 0 8px}
+.toc ol{margin:0; padding-left:1.6em}
+.toc li{margin:.2em 0}
+.toc a{color:var(--fg); text-decoration:none; border-bottom:1px dashed var(--accent)}
+.code{position:relative; margin:12px 0 16px}
+.code pre{margin:0; background:var(--code-bg); border:1px solid var(--line); border-radius:8px;
+  padding:14px 16px; padding-right:84px; white-space:pre-wrap; word-break:break-word;
+  font-family:inherit; font-size:14px; line-height:1.8}
+.copy{position:absolute; top:8px; right:8px; font:inherit; font-size:12px; padding:4px 10px;
+  border:1px solid var(--accent); background:var(--bg); color:var(--accent); border-radius:6px; cursor:pointer}
+.copy.done{background:var(--accent); color:#fff}
+blockquote{margin:12px 0 16px; padding:10px 16px; border-left:4px solid var(--line); background:var(--code-bg); border-radius:0 8px 8px 0}
+blockquote p{margin:0 0 .3em}
+blockquote p:last-child{margin:0}
+.phrases{list-style:none; padding:0; margin:8px 0 16px; display:flex; flex-wrap:wrap; gap:8px}
+.phrases li{background:var(--code-bg); border:1px solid var(--line); border-radius:8px; padding:6px 12px; font-size:14px}
+.table-wrap{overflow-x:auto; margin:12px 0 16px}
+table{border-collapse:collapse; width:100%; font-size:14px; line-height:1.7; min-width:520px}
+th,td{border:1px solid var(--line); padding:8px 10px; vertical-align:top; text-align:left}
+th{background:var(--accent-soft); white-space:nowrap}
+ul.tips{padding-left:1.3em}
+ul.tips li{margin:.3em 0}
+.note{background:var(--note-bg); border-left:4px solid var(--note-border); border-radius:0 8px 8px 0;
+  padding:12px 16px; margin:12px 0; font-size:14px; line-height:1.8}
+.note p:last-child{margin-bottom:0}
+.cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px; margin:12px 0}
+.card{display:block; border:1px solid var(--line); border-radius:8px; padding:14px 16px; text-decoration:none; color:var(--fg)}
+.card:hover{border-color:var(--accent)}
+.card .t{font-weight:700; display:block; margin-bottom:4px}
+.card .d{font-size:13px; color:var(--muted)}
+.soon{border:1px dashed var(--accent); border-radius:8px; padding:16px 20px; margin:12px 0}
+.end{margin-top:56px; padding:24px; border:1px solid var(--line); border-radius:8px}
+.end p:last-child{margin-bottom:0}
+.line-btn{display:inline-block; margin-top:8px; background:var(--line-green); color:#fff; font-weight:700;
+  text-decoration:none; padding:12px 24px; border-radius:999px}
+.closing{margin-top:40px; font-weight:700; line-height:2}
+footer{margin-top:40px; color:var(--muted); font-size:12px; border-top:1px solid var(--line); padding-top:12px}
+@media print{
+  .copy,.toc,.line-btn{display:none}
+  .page{max-width:none; padding:0}
+  h2{break-after:avoid}
+  .code,.table-wrap,blockquote{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <p class="kicker">Kindle『AIは、3行でいい。』読者特典</p>
+  <h1>『AIは、3行でいい。』実践キット</h1>
+  <p class="sub">本を閉じたあとに、そのまま使えるものをまとめました。</p>
+</header>
+
+<p>本を読んでいただき、ありがとうございます。</p>
+<p>全部を使う必要はありません。まずは「1．3行プロンプト実践シート」だけで始められます。</p>
+
+<nav class="toc" aria-label="目次">
+  <ol>
+    <li><a href="#sheet">3行プロンプト実践シート</a></li>
+    <li><a href="#examples">生のやり取り実例集</a></li>
+    <li><a href="#cards">次の一言カード</a></li>
+    <li><a href="#map">迷ったときの早見表</a></li>
+    <li><a href="#meeting">仮想会議プロンプト</a></li>
+    <li><a href="#nabe">なべ式プロンプトのテンプレート</a></li>
+    <li><a href="#video">実演動画「テーマ決め編」</a></li>
+  </ol>
+</nav>
+
+<!-- 1 -->
+<h2 id="sheet"><span class="num">1</span>3行プロンプト実践シート</h2>
+<p class="what">まず、これだけで始められます。</p>
+
+<h3>使い方は3つだけ</h3>
+<ol>
+  <li>下の3つの空欄を埋める。決まっていないところは、決まっていないまま書く。</li>
+  <li>そのままAIに貼る。書き方は整えなくていい。</li>
+  <li>返事を読んで、違えば「違う」と返す。（返し方は<a href="#cards">「次の一言カード」</a>）</li>
+</ol>
+
+<h3>コピペ用（そのまま貼る）</h3>
+<div class="code"><pre>理想：
+現状：
+どうする？：</pre><button class="copy" type="button">コピー</button></div>
+<ul class="tips">
+  <li><strong>理想</strong>　こうなりたい。こうなってほしい。「もう少し〜したい」「〜が減ってほしい」くらいでいい。理由まで書けなくていい。</li>
+  <li><strong>現状</strong>　今、こうなっている。困っていること、やってみたこと、わかっていないこと。「原因はわからない」も現状のうち。</li>
+  <li><strong>どうする？</strong>　AIと、まず何をするか。最終的な答えを決める欄ではない。迷ったら「まず整理して」。</li>
+</ul>
+
+<h3>決まっていないときの書き方（例）</h3>
+<p>雑でいい、の見本です。</p>
+<div class="code"><pre>理想：もう少し仕事を楽にしたい。
+現状：最近ずっと忙しい。でも、何が原因なのかはよくわからない。
+どうする？：まず整理して。</pre><button class="copy" type="button">コピー</button></div>
+<p>これだけで、AIは「何が忙しさを作っているか」を聞き返してきます。そこから会話が始まります。</p>
+
+<h3>「どうする？」に入れる言葉の例</h3>
+<div class="table-wrap"><table>
+  <tr><th>したいこと</th><th>書く言葉</th></tr>
+  <tr><td>頭の中を出したい</td><td>まず整理して</td></tr>
+  <tr><td>自分でも説明できない</td><td>必要なことを質問して</td></tr>
+  <tr><td>方向を決めたい</td><td>方向性を一緒に整理して</td></tr>
+  <tr><td>決めるための材料がほしい</td><td>判断するためのポイントを整理して</td></tr>
+  <tr><td>書く前に考えたい</td><td>相手に何を伝える必要があるか整理して</td></tr>
+  <tr><td>案がほしい</td><td>現実的な案を3つ出して</td></tr>
+  <tr><td>わからないことがある</td><td>一般的にはどうしているか調べて</td></tr>
+</table></div>
+
+<h3>貼ったあと</h3>
+<p>返事が来たら、正しいかどうかより「自分の言いたかったことと合っているか」を見る。</p>
+<p>合っていなければ、「そこじゃない」「もう少しこういう感じ」と返す。<br>AIは怒りません。往復するほど、自分の考えがはっきりしてきます。</p>
+
+<!-- 2 -->
+<h2 id="examples"><span class="num">2</span>生のやり取り実例集</h2>
+<p class="what">「なんか違う」と言っていいことがわかります。</p>
+<p>企画を考える。判断する。伝える。<br>この3つの場面で、僕が実際にAIと往復したやり取りを載せています。きれいに整えた例ではなく、実物です。</p>
+<div class="cards">
+  <a class="card" href="kikaku.html"><span class="t">企画編</span><span class="d">企画を考えるときの往復</span></a>
+  <a class="card" href="handan.html"><span class="t">判断編</span><span class="d">迷って決めるときの往復</span></a>
+  <a class="card" href="tsutaeru.html"><span class="t">伝える編</span><span class="d">相手に伝える文章を作るときの往復</span></a>
+</div>
+
+<!-- 3 -->
+<h2 id="cards"><span class="num">3</span>次の一言カード</h2>
+<p class="what">会話が止まったときに、続けられます。</p>
+<p>AIの返事を見て、次に何と言えばいいかわからなくなったときの返し方です。そのまま貼れます。丁寧に書かなくていい。</p>
+
+<h3>返事がずれているとき</h3>
+<ul class="phrases"><li>それは違う。こういう感じ</li><li>そこじゃない。聞きたいのは〜のほう</li><li>方向は合っているけど、なんとなく弱い。違和感の正体を一緒に整理して</li><li>今回の条件だと、それは使えない。条件は〜</li></ul>
+<h3>もっと深めたいとき</h3>
+<ul class="phrases"><li>もう少し具体的に</li><li>それはなぜ？</li><li>例を3つ出して</li><li>その中で、今の自分に一番近いのはどれ？</li></ul>
+<h3>自分が言葉にできないとき</h3>
+<ul class="phrases"><li>必要なことを質問して</li><li>まだ自分でもうまく説明できていない。質問しながら一緒に整理して</li><li>なんで、この理想が欲しいんだっけ？</li><li>理想に対して、今、何が足りていないんだっけ？</li></ul>
+<h3>別の見方がほしいとき</h3>
+<ul class="phrases"><li>別の視点だと？</li><li>顧客から見てどう？</li><li>半年後まで考えると？</li><li>この案に反対する人なら、何を問題にする？</li><li>この判断が失敗するとしたら、どんな理由がありそう？</li></ul>
+<h3>決めたいとき</h3>
+<ul class="phrases"><li>判断するためのポイントを整理して</li><li>やめた方がいい理由と、やった方がいい理由を両方出して</li><li>どちらが正しいかではなく、どんな条件ならＡ、どんな条件ならＢか整理して</li><li>まず1か月だけ試すなら、どう設計すればいい？</li></ul>
+<h3>調べてほしいとき</h3>
+<ul class="phrases"><li>普通はどうしている？</li><li>より良いやり方は？</li><li>公式の最新情報で、今どうなっているか確認して。確認できた事実と推測を分けて</li></ul>
+<h3>形にするとき</h3>
+<ul class="phrases"><li>では、この内容でメールを書いて</li><li>企画書の構成にして</li><li>これを読んだ人が、最初に疑問に思いそうなことは？</li><li>半分の長さにするなら、絶対に残すものは何？</li></ul>
+<h3>次回のために</h3>
+<ul class="phrases"><li>今日決まったことと、次に考えることを短くまとめて</li><li>次に相談するとき、最初に貼る文章を作って</li></ul>
+
+<h3>使い方のコツ</h3>
+<ul class="tips">
+  <li>一度に一つだけ返す。まとめて言うと、返事もぼやける。</li>
+  <li>「違う」と言うのに理由はいらない。理由は、往復しているうちに見つかる。</li>
+  <li>3回返して進まなければ、3行に戻る。「理想」か「現状」のどちらかが薄いことが多い。</li>
+</ul>
+
+<!-- 4 -->
+<h2 id="map"><span class="num">4</span>迷ったときの早見表</h2>
+<p class="what">止まったときに、戻る場所があります。</p>
+<p>「どうする？」が出てこない。調べ方がわからない。考えが同じところを回る。<br>そのときに戻る場所です。覚えなくていい。</p>
+
+<h3>「どうする？」が思いつかないとき　内・外 → 前 → 実行</h3>
+<p>今、どこにある情報を使って考えているか。</p>
+<div class="table-wrap"><table>
+  <tr><th>場所</th><th>何をする</th><th>頼み方</th></tr>
+  <tr><td><strong>内</strong></td><td>今あるものを整理する（過去の資料、会議の内容、自分の考え、社内のデータ）</td><td>「今ある情報を整理して」</td></tr>
+  <tr><td><strong>外</strong></td><td>足りないものを集める（競合、一般的なやり方、最新情報、専門家の考え）</td><td>「調べてきて」</td></tr>
+  <tr><td><strong>前</strong></td><td>並べて考える（比較する、弱点を出す、優先順位をつける）</td><td>「提案して」「比較して」「一緒に考えて」</td></tr>
+  <tr><td><strong>実行</strong></td><td>決まったものを形にする</td><td>「作って」「文章にして」「計画にして」</td></tr>
+</table></div>
+<ul class="tips">
+  <li>順番どおりに全部やらなくていい。内→前→実行だけで終わることも多い。</li>
+  <li>迷ったら、まず「内」。すでに持っている材料を出すと、調べなくてよかったとわかることがある。</li>
+  <li>自分の中だけで回っているなら「外」へ。</li>
+</ul>
+
+<h3>「調べてきて」の使い分け　普通・最善・事実</h3>
+<p>何を知りたくて調べるのかで、頼み方が変わる。</p>
+<div class="table-wrap"><table>
+  <tr><th>知りたいこと</th><th>呼び方</th><th>頼み方</th></tr>
+  <tr><td><strong>普通はどうしている？</strong></td><td>デファクトスタンダード</td><td>「一般的にはどう〜することが多い？」</td></tr>
+  <tr><td><strong>より良いやり方は？</strong></td><td>ベストプラクティス</td><td>「〜のベストプラクティスを調べて。今回の条件に合うものと、やりすぎになりそうなものを分けて」</td></tr>
+  <tr><td><strong>今、事実としてどうなっている？</strong></td><td>公式・最新・正確</td><td>「公式の最新情報を優先して確認して。確認できた事実と、推測を分けて」</td></tr>
+</table></div>
+<ul class="tips">
+  <li>「普通」と「最善」と「事実」は違う。</li>
+  <li>「何について」だけでなく「何を知るために」まで伝える。<br>例：「競合の料金を調べて」→「自社の新サービスの価格を決めたいので、同じ顧客層の競合の料金体系を調べて」</li>
+  <li>出典がなければ「最新」ではないかもしれない。公式情報は自分でも開いて確かめる。</li>
+</ul>
+
+<h3>考えが同じところを回るとき　視点・視野・視座</h3>
+<p>答えを変えるためではなく、見えていなかったものを見るために。</p>
+<div class="table-wrap"><table>
+  <tr><th>変えるもの</th><th>問い</th><th>質問例</th></tr>
+  <tr><td><strong>視点</strong></td><td>誰の立場から見るか（横）</td><td>「顧客から見てどう？」「営業担当者から見たら売りやすい？」「初めて聞く人がわかりにくいところは？」</td></tr>
+  <tr><td><strong>視野</strong></td><td>どこまで広く見るか</td><td>「半年後まで含めると？」「会社全体から見ると？」／広げすぎたら「今回は1か月以内に改善できる範囲に絞って」</td></tr>
+  <tr><td><strong>視座</strong></td><td>どの高さから見るか（上下）</td><td>「部長なら何を気にする？」「経営者から見ると何が足りない？」「逆に、毎日使う担当者の高さに移って考えて」</td></tr>
+</table></div>
+<ul class="tips">
+  <li>視座は上げるものというより、動かすもの。上からの見方がいつも正しいわけではない。</li>
+  <li>一人では出ない反対意見がほしいときは、「この案に反対する人なら、何を問題にする？」</li>
+  <li>立場の違う人たちに議論してもらいたいときは、<a href="#meeting">「仮想会議プロンプト」</a>へ。</li>
+</ul>
+<p>迷ったら、3行に戻る。理想。現状。どうする？</p>
+
+<!-- 5 -->
+<h2 id="meeting"><span class="num">5</span>仮想会議プロンプト</h2>
+<p class="what">一人では見落とすことを、拾えます。</p>
+<p>一人で考えていると、どうしても一人分の見方になる。違う立場の人たちに、AIの中で議論してもらうための型です。<br>多数決をしてもらうためのものではありません。一人では出てこない懸念や選択肢を出すためのものです。</p>
+
+<h3>いちばん短い頼み方</h3>
+<p>テーマを書いて、その下にこれを貼る。</p>
+<div class="code"><pre>このテーマについて仮想会議をして。
+立場が被らない6人くらいを設定して、それぞれの立場から意見・懸念・反対意見を出して。
+最後に、判断するための論点と選択肢を整理して。</pre><button class="copy" type="button">コピー</button></div>
+<p>これだけで動きます。</p>
+
+<h3>3行を先に渡す頼み方（おすすめ）</h3>
+<p>理想と現状を先に渡すと、議論がずれません。参加者もAIに選んでもらえます。</p>
+<div class="code"><pre>理想：
+現状：
+今回考えたいこと：
+
+このテーマについて仮想会議をして。
+1. 今回のテーマを考えるのに適切な参加者を、立場が被らないように6人選んで。
+2. それぞれの立場から、「ここがいい」「ここが不安」「この情報が足りない」「自分の立場ならこうする」を出して。
+3. 意見が分かれたところは、互いに反論させて。
+4. 最後に、私が判断するための論点と、選択肢を整理して。結論は出さなくていい。</pre><button class="copy" type="button">コピー</button></div>
+
+<h3>参加者の選び方</h3>
+<p>人数より、立場が重ならないことが大事です。マーケターを10人置いても、似た意見になります。</p>
+<div class="table-wrap"><table>
+  <tr><th>見る角度</th><th>参加者の例</th></tr>
+  <tr><td>売る人</td><td>営業担当</td></tr>
+  <tr><td>買う人</td><td>顧客（初めての人／長い付き合いの人）</td></tr>
+  <tr><td>使う人</td><td>現場担当者</td></tr>
+  <tr><td>お金を見る人</td><td>財務・経理</td></tr>
+  <tr><td>リスクを見る人</td><td>慎重派、法務、品質担当</td></tr>
+  <tr><td>長期で見る人</td><td>経営者、推進派</td></tr>
+</table></div>
+<p>迷ったら、AIに「今回のテーマに合う参加者を選んで」と任せて構いません。</p>
+
+<h3>会議のあとに返す一言</h3>
+<ul class="phrases"><li>反対意見のうち、本当に致命的なものはどれ？</li><li>顧客役の意見を、もう少し具体的な場面で言い直して</li><li>この論点で、僕（私）がまだ持っていない情報は何？</li><li>今の議論を踏まえて、まず1か月で試すならどの案？</li></ul>
+
+<h3>注意</h3>
+<ul class="tips">
+  <li>顧客役の発言は、本当の顧客の声ではありません。「こういう不安が出るかもしれない」の候補として使い、本当に大事な点は実際の相手に確かめる。</li>
+  <li>6人中4人が賛成したからやる、という使い方はしない。決めるのは自分。</li>
+  <li>社外に出せない情報が混ざっていないか、貼る前に見る。</li>
+</ul>
+
+<h3>使いどころの例</h3>
+<ul class="tips">
+  <li>新しいサービスや企画を、出す前に一度たたいてもらう</li>
+  <li>上司や顧客に提案する前に、反対されそうな点を先に出す</li>
+  <li>二つの案で迷っていて、どちらにも理由があるとき</li>
+  <li>会議の前に、出そうな論点を先に並べておく</li>
+</ul>
+
+<!-- 6 -->
+<h2 id="nabe"><span class="num">6</span>なべ式プロンプトのテンプレート</h2>
+<p class="what">対話で固めたことを、形にできます。</p>
+
+<h3>これは何をする型か</h3>
+<p>3行で始めて、対話で考えが固まったあと。文章や資料、システムなど、<strong>繰り返し作るもの</strong>をAIに作らせるときに使う型です。</p>
+<blockquote><p>3行で始める。</p><p>対話しながら考える。</p><p>必要なら、最後は形にする。</p></blockquote>
+<p>この最後の「形にする」が、なべ式プロンプトです。3行が「考え始めるための型」なら、こちらは「作らせるための型」。</p>
+<p>対話をしないまま、この型をいきなり埋めようとすると、空欄が埋まりません。埋まらないのは型のせいではなく、まだ考えが固まっていないからです。そのときは3行に戻ってください。</p>
+
+<h3>型（6つの項目）</h3>
+<div class="code"><pre># 役割
+AIに誰として動いてほしいか。どんな立場・経験の人か。
+
+# 目的
+何のために作るのか。これが達成できれば成功、という状態。
+
+# スキルセット
+その役割に必要な知識や技能。対話で「ここは押さえてほしい」とわかったもの。
+
+# 制約条件
+守ってほしいこと。入れないもの。避ける表現。触れてはいけない情報。
+
+# 実行手順
+どの順番で進めるか。確認してから書くのか、案を出してから絞るのか。
+
+# 出力フォーマット
+何をどんな形で出すか。見出し構成、文字数、ファイル形式、案の数。</pre><button class="copy" type="button">コピー</button></div>
+<p>前半の3つ（役割・目的・スキルセット）は、<strong>誰にお願いするか</strong>。<br>後半の3つ（制約条件・実行手順・出力フォーマット）は、<strong>どういう仕事をしてもらうか</strong>。</p>
+<p>人に仕事を頼むときと同じです。誰に頼むかを決めずに仕事の中身だけ渡しても、仕事の中身を決めずに人だけ選んでも、うまくいきません。だから、6つそろえて渡すのがおすすめです。</p>
+
+<h3>対話から型へ移す、いちばん簡単な方法</h3>
+<p>自分で埋めなくていい。対話がひと区切りついたら、こう頼む。</p>
+<div class="code"><pre>今のやり取りを、次回そのまま使える指示にまとめて。
+役割・目的・スキルセット・制約条件・実行手順・出力フォーマットの項目で整理して。
+まだ決まっていない項目は「未定」と書いて。</pre><button class="copy" type="button">コピー</button></div>
+<p>AIが下書きを作ります。「未定」のところだけ自分で決めれば、型が埋まります。その日の考え方が、自分の型として残ります。</p>
+<p>できあがった指示は、一度そのまま使ってみてください。「いや、こうじゃない」と思ったところを直せば、次からは一発で出る指示になります。</p>
+
+<h3>例：提案書の前半を作らせる（第11章の続き）</h3>
+<p>対話で「価格ではなく、自分たちに頼む価値を理解したうえで検討してほしい」と固まったあと。</p>
+<div class="code"><pre># 役割
+法人向けの提案書を数多く書いてきた営業企画の担当者。
+
+# 目的
+価格比較の前に、こちらに頼む価値を相手が理解している状態を作る。
+
+# スキルセット
+相手の課題を相手の言葉で言い直す力。
+忙しい決裁者が最初の1ページで判断することを踏まえた構成力。
+
+# 制約条件
+価格はこの段階では書かない。実績の羅列はしない。専門用語は使わない。
+自社の紹介は後ろに回す。
+
+# 実行手順
+1. 相手の課題を整理して、こちらの理解を確認する
+2. 確認が取れたら、提案書の前半を書く
+3. 案を2パターン出し、違いを一言で添える
+
+# 出力フォーマット
+A4で1ページ。見出し4つ（相手の課題／解決できる範囲／解決したあとの状態／進め方）。各見出し3〜5行。</pre><button class="copy" type="button">コピー</button></div>
+
+<h3>型が生きる場面</h3>
+<ul class="tips">
+  <li>毎月出す報告書、毎回書く案内文など、同じ種類のものを繰り返し作るとき</li>
+  <li>チームの誰が頼んでも、同じ品質で出てきてほしいとき</li>
+  <li>一度固めた考えを、次回ゼロから説明し直したくないとき</li>
+</ul>
+<p>一度きりのものは、3行と対話だけで十分です。型に固めるのは、二度目があるものだけでいい。</p>
+
+<h3>この先</h3>
+<p>この型の各項目をどう決めるか、成果物ごとにどう変えるか、出てきたものをどう直していくか。そこは本書の先の話です。</p>
+<p>まず話す。その中で考える。必要になったら、あとから固める。</p>
+
+<!-- 7 -->
+<h2 id="video"><span class="num">7</span>実演動画「テーマ決め編」</h2>
+<p class="what">僕が実際にAIと話しているところを、見られます。</p>
+<div class="soon">
+  <p><strong>準備中です。</strong>準備ができしだい、このページに追加します。</p>
+  <p>会社員のころ、社長や役員の前で発表するテーマが決まらずに止まったことがあります。当時の状況を「現状」に書いて、今のAIと本当に壁打ちします。「うーん、違うな」から言い直して、テーマが一つに絞れるまでを、きれいに編集せずにお見せします。</p>
+</div>
+
+<!-- LINE -->
+<section class="end">
+  <p><strong>もっと使ってみたい方へ</strong></p>
+  <p>AIの使い方や、仕事への取り入れ方、なべ式AIメソッドの実践例は、今後も発信していきます。最新の情報や追加の実践例、動画の公開のお知らせは、LINEでお届けします。</p>
+  <a class="line-btn" href="https://lin.ee/x77JHoN" target="_blank" rel="noopener">LINEで受け取る</a>
+</section>
+
+<p class="closing">決まっていなくていい。<br>うまく言えないまま、話していい。</p>
+
+<footer>
+  <p>『AIは、3行でいい。』渡邉ゆうじ ／ <a href="/">くじらAIワークス</a></p>
+</footer>
+
+</div>
+<script>
+document.querySelectorAll('.copy').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    var text = btn.parentElement.querySelector('pre').innerText;
+    var done = function () {
+      btn.textContent = 'コピーしました'; btn.classList.add('done');
+      setTimeout(function () { btn.textContent = 'コピー'; btn.classList.remove('done'); }, 1600);
+    };
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(done);
+    } else {
+      var ta = document.createElement('textarea'); ta.value = text; document.body.appendChild(ta);
+      ta.select(); document.execCommand('copy'); document.body.removeChild(ta); done();
+    }
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>実例集 企画編</title><style>:root{
+  --bg:#ffffff; --fg:#222222; --muted:#666666;
+  --accent:#E08A3C; --accent-soft:#FBEFE2;
+  --ai-bg:#F3F3F3; --me-bg:#FBEFE2; --line:#DDDDDD;
+  --note-bg:#FFFBF5; --note-border:#E08A3C;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#1B1B1B; --fg:#EDEDED; --muted:#A8A8A8;
+    --accent:#E8A05C; --accent-soft:#3A2A1C;
+    --ai-bg:#2A2A2A; --me-bg:#3A2A1C; --line:#444444;
+    --note-bg:#262320; --note-border:#E8A05C;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1B1B1B; --fg:#EDEDED; --muted:#A8A8A8;
+  --accent:#E8A05C; --accent-soft:#3A2A1C;
+  --ai-bg:#2A2A2A; --me-bg:#3A2A1C; --line:#444444;
+  --note-bg:#262320; --note-border:#E8A05C;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--fg);
+  font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic","BIZ UDPGothic","Noto Sans JP",sans-serif;
+  font-size:15px; line-height:1.9; font-feature-settings:"palt";
+}
+.page{max-width:760px; margin:0 auto; padding:40px 16px 64px}
+header{border-bottom:2px solid var(--accent); padding-bottom:16px; margin-bottom:32px}
+.kicker{color:var(--muted); font-size:13px; margin:0 0 6px}
+h1{font-size:26px; line-height:1.4; margin:0 0 6px}
+.sub{color:var(--muted); font-size:14px; margin:0}
+h2{font-size:18px; margin:40px 0 12px; padding-left:12px; border-left:4px solid var(--accent); line-height:1.5}
+p{margin:0 0 1em}
+.lead{font-size:15px}
+.first{
+  background:var(--accent-soft); border-radius:8px; padding:16px 20px; margin:12px 0 8px;
+  font-size:17px; font-weight:700;
+}
+.chat{display:flex; flex-direction:column; gap:20px; margin:16px 0}
+.msg{display:flex; flex-direction:column; max-width:92%}
+.msg .who{font-size:12px; color:var(--muted); margin:0 0 4px 8px; letter-spacing:.04em}
+.msg .bubble{border-radius:14px; padding:14px 18px}
+.msg .bubble p:last-child{margin-bottom:0}
+.msg.ai{align-self:flex-start}
+.msg.ai .bubble{background:var(--ai-bg); border-top-left-radius:4px}
+.msg.me{align-self:flex-end; align-items:flex-end}
+.msg.me .who{margin:0 8px 4px 0}
+.msg.me .bubble{background:var(--me-bg); border-top-right-radius:4px; font-weight:600}
+.bubble ul,.bubble ol{margin:.4em 0 .8em; padding-left:1.4em}
+.bubble li{margin:.2em 0}
+.bubble strong{font-weight:700}
+.note{
+  background:var(--note-bg); border-left:4px solid var(--note-border);
+  border-radius:0 8px 8px 0; padding:12px 16px; margin:4px 0 4px;
+  font-size:14px; line-height:1.8;
+}
+.note .label{display:inline-block; font-size:12px; font-weight:700; color:var(--accent); letter-spacing:.06em; margin-bottom:4px}
+.note p:last-child{margin-bottom:0}
+.summary ul{padding-left:1.3em}
+.summary li{margin:.4em 0}
+.close{
+  margin-top:24px; padding:20px 24px; border:1px solid var(--line); border-radius:8px;
+}
+.close p{margin:0 0 .6em}
+.close p:last-child{margin:0; font-weight:700}
+footer{margin-top:40px; color:var(--muted); font-size:12px; border-top:1px solid var(--line); padding-top:12px}
+@media print{
+  body{font-size:11.5pt}
+  .page{max-width:none; padding:0}
+  .msg{max-width:100%}
+  h2{break-after:avoid}
+  .msg,.note{break-inside:avoid}
+  @page{size:A4; margin:18mm 16mm}
+}
+.msg .who .t{margin-left:8px; font-weight:400; opacity:.7}
+.bubble ul,.bubble ol{margin:.4em 0 .8em}
+</style></head><body><div class="page">
+<p style="margin:0 0 16px;font-size:13px"><a href="./#examples" style="color:var(--accent)">← 実践キットに戻る</a></p>
+<header><p class="kicker">『AIは、3行でいい。』実践キット　2／7</p><h1>生のやり取り実例集　企画編</h1><p class="sub">ぼんやりした「こういうツール」を、コンセプトと機能まで持っていった記録</p></header>
+<h2>この場面で困っていたこと</h2><p>この本の原稿をKindle用に組むために、自分で作っているツールがあります。のちに「綴じ部屋（とじべや）」という名前になる道具です（名前を決めた記録は判断編にあります）。<br>そこに機能を足したい。でも、そもそもこのツールは何のための道具なのか、誰のためなのかを、言葉にしたことがなかった。</p>
+<p>第9章に書いた「ぼんやりしたアイデアを、企画の核心まで持っていく」を、自分のツールでやることになった記録です。<br>コンセプトを出させ、足し、機能を頼み、解釈を直し、作ったものを削るまで。</p>
+<h2>最初に投げた言葉</h2><p>3行の形になっていません。10文字です。</p><div class="first">一旦コンセプト出して</div>
+<h2>やり取り</h2><p>発言順に載せています。著者の発言は原文のままです。AIの返事は長いので、要点を残して短くし、専門用語は言い換えています。この話題と関係のない作業の指示や、事務的なやり取りは省き、省いた区間は「解説」で補っています。</p>
+<div class="chat">
+<div class="msg me"><div class="who">渡邉<span class="t">18:35</span></div><div class="bubble"><p>一旦コンセプト出して</p></div></div>
+<div class="msg me"><div class="who">渡邉<span class="t">18:36</span></div><div class="bubble"><p>一旦ツール自体のコンセプトを言語化して。あと機能。メリットベネフィットも</p></div></div>
+<div class="msg ai"><div class="who">AI<span class="t">18:37</span></div><div class="bubble"><p>コンセプトを言葉にして、仕様書に「コンセプト文書」として追加しました。要点はこのとおりです。</p>
+<p><strong>一文で言うと</strong></p>
+<p>「PCの中に、自分専用の出版デスクを持つ」ための道具です。本業を持つ人が、AIと一緒に書いた原稿を、束ねて、整えて、Kindleで崩れない1冊に仕上げる場所です。</p>
+<p><strong>誰のため</strong></p>
+<p>コンサルタント・講師・士業・小さな会社の代表のように、本業を持ちながらKindleの実用書で自分の考えを届けたい人です。小説家は対象にしていません。</p>
+<p><strong>解く困りごと</strong></p>
+<ol><li>パソコンで書いた原稿をKindle用に変換すると、レイアウトが崩れる。</li><li>章ごとのファイルが散らばり、本にするたびに手で組み直す。</li><li>「書く」道具と「本にする」道具が分かれている。</li><li>1冊目の手順が残らず、2冊目が続かない。</li></ol>
+<p><strong>機能 → ベネフィット（抜粋）</strong></p>
+<ul><li>Kindleで崩れない組み方のルールを内蔵 → 組版の試行錯誤に時間を奪われず、内容に時間を使える。</li><li>全章を1回で本の形に書き出せる → 「本にする作業」が怖くなくなり、出版が手の届く行為になる。</li><li>章の扉を独立したページにする → 「ちゃんとした本」として受け取られる。</li><li>（予定）AIの編集者・司書・ライターを1画面で呼べる → 一人でも編集部を持っている状態で本を出せる。</li></ul>
+<p><strong>似た道具との違い</strong></p>
+<p>文書作成ソフトや小説向けの執筆ソフト、メモアプリでも書くことはできますが、Kindle向けの仕上げや書き出しは別の作業になりがちです。この道具は「実用書とKindle出版」に絞り、書く・束ねる・仕上げる・出すを一つにつなげることを目指しています。</p></div></div>
+<div class="note"><span class="label">解説</span><p>「一旦コンセプト出して」の10文字。何を作りたいかは頭の中にありますが、言葉になっていません。自分で書き始める前に、AIに先に言語化させ、それを見て「違う」「足りない」を言う順番にしています。</p></div>
+<div class="msg me"><div class="who">渡邉<span class="t">18:54</span></div><div class="bubble"><p>あと、自分の書籍の履歴を持てるっていうのも入れたいね</p></div></div>
+<div class="msg ai"><div class="who">AI<span class="t">18:55</span></div><div class="bubble"><p>コンセプト文書に「残す（自分の書籍の履歴）」を追加しました。工程は「書く・束ねる・仕上げる・出す・残す」の5つになりました。</p>
+<ul><li>本棚は「いま作っている本」を切り替える場所であると同時に、「これまでに出した本」の記録にもなります。</li><li>1冊ごとに、書名・版・出版した日・Amazonのリンク・章の構成などを残します。</li><li>2冊目を書くときに1冊目の設定をそのまま引き継げて、著者プロフィールに載せる著作一覧もここから作れます。</li></ul></div></div>
+<div class="note"><span class="label">解説</span><p>出てきたコンセプトを読んで、「履歴も」と1つ足しました。ゼロから自分で書いていたら、出てこなかったかもしれない項目です。書かれたものを見ると、足りないものがわかる。このあと名前の決定（判断編）をはさんで、3時間後。</p><p>このあと出てくる「Markdown（マークダウン）」は、見出しや箇条書きを記号で書く、シンプルな文章の書き方のことです。</p></div>
+<div class="msg me"><div class="who">渡邉<span class="t">21:41</span></div><div class="bubble"><p>コンセプト文書<br>のツールの機能として、</p>
+<p>・プレビューで、Kindleモードと、Markdownモードの切り替えきのうがほしいかも。<br>・綴じ部屋の機能を、普通のWindows機能で画面上部のメニューに入っているものは、画面上部のメニューに格納してください</p></div></div>
+<div class="msg ai"><div class="who">AI<span class="t">21:42</span></div><div class="bubble"><p>2件とも受け付けました。まずコンセプト文書に書き足し、実装は実装係のAIに振ります。</p>
+<p><strong>私の解釈（違っていたら止めてください）</strong></p>
+<ul><li>プレビューの切替: 「Kindleモード」は今のKindle風の表示（縦書き・本の体裁）。「Markdownモード」は横書きの素直な文書表示で、中身の変換は同じまま、見た目だけを「本」ではなく「文書」にします。内容の推敲はMarkdownモード、体裁の確認はKindleモード、という使い分けです。</li><li>メニュー: ファイル・編集・表示・挿入・出力・ヘルプを、Windowsの標準の並びで画面上部のメニューバーに入れます。組版に固有の操作はツールバーに残します。</li></ul></div></div>
+<div class="note"><span class="label">解説</span><p>AIは指示をそのまま実行せず、「私の解釈（違っていたら止めてください）」として言い直して返しています。ここでズレていれば、作る前に止められます。</p></div>
+<div class="msg me"><div class="who">渡邉<span class="t">22:04</span></div><div class="bubble"><p>Markdownモードは、ProjectPitのマークダウン機能を確認して、実装してね。<br>そもそもMarkdownの標準プレビュー表示ができることが重要</p></div></div>
+<div class="msg ai"><div class="who">AI<span class="t">22:05</span></div><div class="bubble"><p>承知しました。仕様を差し替えて実装係のAIに伝え、コンセプト文書の定義も直しました。</p>
+<p><strong>Markdownモードの新しい定義</strong></p>
+<ul><li>ProjectPitのプレビューと同じ方式の、標準的なMarkdown表示にします。表示の仕組みと見た目もProjectPitから移します。</li><li>綴じ部屋独自の変換は一切通しません。独自の書き方は、そのままの形で表示されます。</li><li>Kindleモードは今のままです。</li></ul>
+<p>ProjectPitと同じ見本が同じように表示できること、Kindle用の見た目が変わっていないことを確認させてから、画面と一緒にお見せします。</p></div></div>
+<div class="note"><span class="label">解説</span><p>「Markdownモード」の意味が、AIの解釈と著者の頭の中とで違っていました。作られてから直すのではなく、解釈が返ってきた時点で「そもそも標準の表示ができることが重要」と言い直しています。（ProjectPitは、著者が自分用に作っている別のツールです。）</p></div>
+<div class="msg me"><div class="who">渡邉<span class="t">22:15</span></div><div class="bubble"><p>Markdownは、特典を作るための機能と考えてもらえばいいと思う。<br>例えばそのままnoteに張り付けるとか、Nothionに張り付けるとか。<br>そうすると、そのまま反映してくれるイメージ</p></div></div>
+<div class="msg ai"><div class="who">AI<span class="t">22:16</span></div><div class="bubble"><p>なるほど、Markdownモードは「特典を作る機能」ですね。その意図を実装係のAIに伝え、コンセプト文書にも反映しました。</p>
+<p><strong>追加した機能</strong></p>
+<ul><li>「特典用にコピー」: メニューから1回押すと、原稿をnoteやNotionにそのまま貼れる形に整えてコピーします。</li><li>本でしか使わない独自の書き方は、貼り付け先で崩れないように、標準の書き方に置き換えます。</li></ul>
+<p>コンセプト文書には「1つの原稿が本にも特典にもなる」をベネフィットとして書きました。noteやNotionに貼ったときの見え方は、実際に貼って確かめていただく必要があります。</p></div></div>
+<div class="note"><span class="label">解説</span><p>用途を一言（特典を作るための機能）伝えただけで、AIは「特典用にコピー」という機能を足してきました。用途を伝えると、機能はAIが考えられます。実装が終わり、著者が起動して確認したあと。</p></div>
+<div class="msg me"><div class="who">渡邉<span class="t">23:23</span></div><div class="bubble"><p>特典用にコピーって、シンプルにMDエディタのパネルをコピーすればいいのでは？　特典用にコピーというメニューがわかりにくい</p></div></div>
+<div class="msg ai"><div class="who">AI<span class="t">23:23</span></div><div class="bubble"><p>わかりました。専用のメニューはやめて、普段どおりエディタで全選択してコピーする使い方にします。独自の書き方もそのまま貼られますが、シンプルさを優先します。「特典用にコピー」とその関連の処理は取り除きます。</p></div></div>
+<div class="note"><span class="label">解説</span><p>実装されたものを触ってみたら、「メニューがわかりにくい」。AIが足した機能を、やめる判断です。企画は一直線には固まりません。足して、触って、削る。</p></div>
+</div>
+<h2>このやり取りで起きたこと</h2><div class="summary"><ul><li>「一旦コンセプト出して」だけで始めた。何を作りたいかは頭にあるが、言葉にはなっていなかった。</li><li>AIが先に言語化し、それを見て「履歴も」と足した。書かれたものを見ると、足りないものがわかる。</li><li>機能を頼むと、AIは「私の解釈」を先に返した。解釈がずれていた箇所（Markdownモード）を、作る前に言い直した。</li><li>用途を一言伝えただけで、AIは機能を足してきた。実装して触ってみて、その機能を削った。</li></ul></div>
+<div class="close"><p>企画は、頭の中で固めてから頼むものだと思っていました。<br>実際は、ぼんやりしたまま出させて、見て、足して、直して、削る。<br>その往復の中で、コンセプトも機能も固まっていきました。</p></div>
+<footer>会話はAIとの実際のやり取りを発言順に載せています。著者の発言は原文のままです。AIの返事は要点を残して短くし、専門用語や他社の製品名は言い換えています。省いたのは、実装の完了報告と、作業の進行管理に関する事務的なやり取りです。著者は役割の違う複数のAIを使っており、会話の相手のAIが実装を任せる先を「実装係のAI」と表記しています。</footer>
+</div></body></html>
