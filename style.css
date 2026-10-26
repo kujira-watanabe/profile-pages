@@ -451,6 +451,7 @@ img { max-width: 100%; }
 .case-thumb {
   display: block;
   width: calc(100% + 56px);
+  max-width: none;
   margin: -28px -28px 20px;
   height: auto;
   aspect-ratio: 3 / 2;
