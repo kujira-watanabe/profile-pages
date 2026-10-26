@@ -18,3 +18,25 @@ if (menuButton && nav) {
 
 const year = document.getElementById('year');
 if (year) year.textContent = new Date().getFullYear();
+
+// スクロールに合わせて、カードや見出しを順にふわっと表示する
+const revealTargets = document.querySelectorAll(
+  '.section-heading, .three-cards article, .cat-col, .process-col, .case-card, .strength-list article, .fee-card, .faq-group, .tech-groups > div'
+);
+if ('IntersectionObserver' in window && revealTargets.length) {
+  document.documentElement.classList.add('js');
+  revealTargets.forEach((el) => {
+    const siblings = [...el.parentElement.children].filter((c) => c.matches(el.tagName));
+    el.style.transitionDelay = (siblings.indexOf(el) % 3) * 0.12 + 's';
+    el.classList.add('reveal');
+  });
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { rootMargin: '0px 0px -10% 0px' });
+  revealTargets.forEach((el) => observer.observe(el));
+}

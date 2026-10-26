@@ -14,7 +14,7 @@
   <meta property="og:image" content="./images/logo.svg">
 
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./style.css?v=20261026b">
 
   <script type="application/ld+json">
   {
@@ -63,6 +63,15 @@
 </head>
 
 <body>
+  <svg class="icon-sprite" aria-hidden="true" style="display:none">
+    <symbol id="i-store" viewBox="0 0 24 24"><path d="M3 9l1.5-5h15L21 9M3 9h18M3 9c0 1.7 1.3 3 3 3s3-1.3 3-3c0 1.7 1.3 3 3 3s3-1.3 3-3c0 1.7 1.3 3 3 3s3-1.3 3-3M5 12v8h14v-8M10 20v-5h4v5"/></symbol>
+    <symbol id="i-idea" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2V16h5v-.1c0-.8.4-1.5 1-2A6 6 0 0 0 12 3z"/></symbol>
+    <symbol id="i-creative" viewBox="0 0 24 24"><path d="M3 5h12v10H3zM7 19h12V9M6 12l3-3 3 3 2-2"/></symbol>
+    <symbol id="i-voice" viewBox="0 0 24 24"><path d="M3 5h11v7H8l-3 3v-3H3zM10 15v1h6l3 3v-3h2V9h-4"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6zM14 3v5h5M9 13l2 2 4-4"/></symbol>
+    <symbol id="i-tooth" viewBox="0 0 24 24"><path d="M7 3c-2.5 0-4 2-3.5 5 .4 2.3 1.4 3.6 1.9 6 .5 2.5.8 7 2.6 7 1.6 0 1.5-4.5 4-4.5s2.4 4.5 4 4.5c1.8 0 2.1-4.5 2.6-7 .5-2.4 1.5-3.7 1.9-6 .5-3-1-5-3.5-5-2 0-3 1-5 1s-3-1-5-1z"/></symbol>
+    <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></symbol>
+  </svg>
   <a class="skip-link" href="#main">本文へ移動</a>
 
   <header class="site-header" id="top">
@@ -90,7 +99,22 @@
   </header>
 
   <main id="main">
-    <section class="hero">
+    <section class="hero has-image">
+      <div class="hero-visual" aria-hidden="true">
+        <span class="ray ray-1"></span><span class="ray ray-2"></span><span class="ray ray-3"></span>
+        <svg class="hero-net" viewBox="0 0 600 400" fill="none">
+          <g stroke="currentColor" stroke-width="1" opacity=".5"><path d="M60 80 L180 40 L300 110 L430 60 L560 130"/><path d="M180 40 L230 190 L300 110"/><path d="M430 60 L470 220 L560 130"/><path d="M230 190 L360 300 L470 220"/></g>
+          <g fill="currentColor"><circle cx="60" cy="80" r="2.5"/><circle cx="180" cy="40" r="3"/><circle cx="300" cy="110" r="2.5"/><circle cx="430" cy="60" r="3"/><circle cx="560" cy="130" r="2.5"/><circle cx="230" cy="190" r="2"/><circle cx="470" cy="220" r="2.5"/><circle cx="360" cy="300" r="3"/></g>
+        </svg>
+        <svg class="hero-whale" viewBox="0 0 620 240" fill="none">
+          <defs><linearGradient id="whaleFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5f8f9c" stop-opacity=".55"/><stop offset="1" stop-color="#1d3a47" stop-opacity=".25"/></linearGradient></defs>
+          <path d="M30 130 C40 95 110 70 210 68 C320 66 420 92 500 118 L560 92 C576 85 592 92 584 105 L562 128 L590 150 C596 163 579 169 565 161 L500 134 C420 160 320 178 220 174 C120 170 50 160 30 130 Z" fill="url(#whaleFill)" stroke="#a9cdd6" stroke-opacity=".7" stroke-width="1.5"/>
+          <path d="M190 162 C205 198 245 220 282 216 C266 198 244 178 222 168" fill="url(#whaleFill)" stroke="#a9cdd6" stroke-opacity=".7" stroke-width="1.5"/>
+          <g stroke="#a9cdd6" stroke-opacity=".45" stroke-width="1"><path d="M52 146 C120 160 200 166 290 160"/><path d="M62 154 C130 167 205 172 280 168"/><path d="M78 161 C140 172 200 176 260 174"/></g>
+          <circle cx="92" cy="122" r="3" fill="#d8ecf0"/>
+        </svg>
+        <span class="bubble b1"></span><span class="bubble b2"></span><span class="bubble b3"></span><span class="bubble b4"></span>
+      </div>
       <div class="container hero-grid">
         <div class="hero-copy">
           <p class="eyebrow">AI ADVISORY / IMPLEMENTATION / DEVELOPMENT</p>
@@ -127,6 +151,7 @@
           </div>
         </aside>
       </div>
+      <svg class="wave wave-bottom" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 C240 80 480 0 720 30 C960 60 1200 10 1440 40 L1440 80 L0 80 Z"/></svg>
     </section>
 
     <section class="quick-understanding section-tight">
@@ -225,6 +250,8 @@
         <h3 class="case-group-heading">システム構築・AI開発</h3>
         <div class="case-grid">
           <article class="case-card">
+            <img class="case-thumb" src="./images/case-store.webp" alt="店舗のカウンターで、シフト表と精算が自動で整理されるイメージ" width="900" height="600" loading="lazy">
+            <svg class="case-icon" aria-hidden="true"><use href="#i-store"/></svg>
             <p class="case-category">店舗・現場サービス</p>
             <h3>スタッフ業務を一元化する業務支援システム</h3>
             <ul class="bullets"><li>スタッフ配置、報酬・交通費の計算、情報共有など、複数の現場業務を整理しました。</li><li>それらを一つのシステムで扱えるようにしました。</li></ul>
@@ -233,6 +260,8 @@
           </article>
 
           <article class="case-card">
+            <img class="case-thumb" src="./images/case-newbiz.webp" alt="アイデアの電球が、動くアプリの画面に変わるイメージ" width="900" height="600" loading="lazy">
+            <svg class="case-icon" aria-hidden="true"><use href="#i-idea"/></svg>
             <p class="case-category">新規事業</p>
             <h3>AIサービスの構想を実装可能な形へ</h3>
             <ul class="bullets"><li>アイデア段階から、利用者・業務・データ・AIの役割を整理しました。</li><li>必要な機能と技術構成を具体化し、試作に落とし込みました。</li></ul>
@@ -241,6 +270,8 @@
           </article>
 
           <article class="case-card">
+            <img class="case-thumb" src="./images/case-creative.webp" alt="過去の制作物や資料が並ぶ、制作スタジオの机のイメージ" width="900" height="600" loading="lazy">
+            <svg class="case-icon" aria-hidden="true"><use href="#i-creative"/></svg>
             <p class="case-category">広告・クリエイティブ</p>
             <h3>社内クリエイティブ知見を活用するAIシステム</h3>
             <ul class="bullets"><li>過去の制作情報や社内ナレッジを使い、企画・制作の業務を支援するAIシステムを設計・開発しました。</li><li>構想の整理から、Webアプリ、データ、外部連携まで一貫して対応しました。</li></ul>
@@ -249,6 +280,8 @@
           </article>
 
           <article class="case-card">
+            <img class="case-thumb" src="./images/case-marketing.webp" alt="たくさんの吹き出しが整理され、カードとグラフになるイメージ" width="900" height="600" loading="lazy">
+            <svg class="case-icon" aria-hidden="true"><use href="#i-voice"/></svg>
             <p class="case-category">マーケティング</p>
             <h3>顧客の声を分析・活用するAIシステム</h3>
             <ul class="bullets"><li>大量の顧客フィードバックを整理・分類し、示唆を引き出すまでを支援するAIワークフローを作りました。</li><li>マーケティングや商品改善につなげられる形に設計しました。</li></ul>
@@ -257,6 +290,8 @@
           </article>
 
           <article class="case-card">
+            <img class="case-thumb" src="./images/case-pro.webp" alt="書類が仕組みで整理され、チェックリストにまとまるイメージ" width="900" height="600" loading="lazy">
+            <svg class="case-icon" aria-hidden="true"><use href="#i-doc"/></svg>
             <p class="case-category">士業・専門サービス</p>
             <h3>専門業務を支援するAI業務システム</h3>
             <ul class="bullets"><li>専門情報や業務データを使い、情報処理と判断を支援する専用システムを開発しました。</li><li>AI、Webアプリ、データベース、ワークフローを一つにまとめました。</li></ul>
@@ -265,6 +300,8 @@
           </article>
 
           <article class="case-card">
+            <img class="case-thumb" src="./images/case-dental.webp" alt="歯の模型と色見本、カメラ、色を比べるタブレットのイメージ" width="900" height="600" loading="lazy">
+            <svg class="case-icon" aria-hidden="true"><use href="#i-tooth"/></svg>
             <p class="case-category">医療・歯科</p>
             <h3>画像から判定するAIプロンプトの開発</h3>
             <ul class="bullets"><li>歯科技工の業務システムに組み込むためのプロンプトを設計・開発しました。</li><li>口の中とシェードガイド（色見本）の写真から、最も近い色を判定します。</li></ul>
@@ -276,6 +313,8 @@
         <h3 class="case-group-heading">AI顧問</h3>
         <div class="case-grid case-grid-single">
           <article class="case-card">
+            <img class="case-thumb" src="./images/case-advisor.webp" alt="打ち合わせ机と、3段階のロードマップを描いたボードのイメージ" width="900" height="600" loading="lazy">
+            <svg class="case-icon" aria-hidden="true"><use href="#i-compass"/></svg>
             <p class="case-category">経営者・事業責任者（複数社）</p>
             <h3>経営層・事業責任者向けAI顧問</h3>
             <ul class="bullets"><li>AI活用の方針、社内導入、業務への適用、サービス構想を継続して支援しています。</li><li>ツールの紹介ではなく、経営・事業の文脈から活用方法を整理します。</li></ul>
@@ -307,6 +346,7 @@
     </section>
 
     <section class="section section-dark">
+      <svg class="wave wave-top" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0 L1440 0 L1440 40 C1200 70 960 20 720 45 C480 70 240 15 0 40 Z"/></svg>
       <div class="container">
         <div class="section-heading light">
           <p class="eyebrow">APPROACH</p>
@@ -337,6 +377,7 @@
           </div>
         </div>
       </div>
+      <svg class="wave wave-bottom wave-light" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 C240 80 480 0 720 30 C960 60 1200 10 1440 40 L1440 80 L0 80 Z"/></svg>
     </section>
 
     <section class="section" id="profile">
@@ -552,20 +593,25 @@
     </section>
 
     <section class="contact" id="contact">
-      <div class="container contact-inner">
-        <p class="eyebrow">CONTACT</p>
-        <h2>AIについて、<br>一度話してみませんか。</h2>
-        <p>
-          「まだ何を作ればいいかわからない」という段階でも構いません。<br>
-          何が課題なのか。AIで何ができるのか。何をしない方がいいのか。そこから一緒に整理します。
-        </p>
-        <div class="contact-box">
-          <p>AIについてのご相談は、フォームからお気軽にお送りください。XのDMでも受け付けています。</p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="https://forms.gle/tMsSApwWJD9jxgiY7" target="_blank" rel="noopener">フォームで相談する</a>
-            <a class="button button-ghost" href="https://x.com/YuNabe_ai" target="_blank" rel="noopener">Xで相談する</a>
+      <div class="container contact-grid">
+        <div class="contact-inner">
+          <p class="eyebrow">CONTACT</p>
+          <h2>AIについて、<br>一度話してみませんか。</h2>
+          <p>
+            「まだ何を作ればいいかわからない」という段階でも構いません。<br>
+            何が課題なのか。AIで何ができるのか。何をしない方がいいのか。そこから一緒に整理します。
+          </p>
+          <div class="contact-box">
+            <p>AIについてのご相談は、フォームからお気軽にお送りください。XのDMでも受け付けています。</p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="https://forms.gle/tMsSApwWJD9jxgiY7" target="_blank" rel="noopener">フォームで相談する</a>
+              <a class="button button-ghost" href="https://x.com/YuNabe_ai" target="_blank" rel="noopener">Xで相談する</a>
+            </div>
           </div>
         </div>
+        <figure class="contact-avatar">
+          <img src="./images/avatar.webp" alt="打ち合わせの机で、ノートに図を描きながら相談者と話す渡邉 裕司のイラスト" width="800" height="600" loading="lazy">
+        </figure>
       </div>
     </section>
   </main>
@@ -580,6 +626,6 @@
     </div>
   </footer>
 
-  <script src="./script.js"></script>
+  <script src="./script.js?v=20261026"></script>
 </body>
 </html>
