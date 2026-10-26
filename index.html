@@ -21,13 +21,43 @@
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "株式会社くじらAIワークス",
+    "url": "https://kujiraaiworks.com/",
     "description": "AI顧問、AI導入・業務設計、AIエージェント、AIシステム開発を支援する会社",
+    "foundingDate": "2026-01",
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "長野県",
+      "addressLocality": "長野市",
+      "addressCountry": "JP"
+    },
     "founder": {
       "@type": "Person",
       "name": "渡邉 裕司",
       "jobTitle": "AI顧問・AI導入ディレクター"
     },
+    "sameAs": ["https://x.com/YuNabe_ai"],
     "areaServed": "JP"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "まだ何を作るか決まっていません。相談できますか？", "acceptedAnswer": {"@type": "Answer", "text": "はい。むしろ「何を作るべきか」「そもそも作る必要があるか」を整理するところから対応しています。"}},
+      {"@type": "Question", "name": "AIについて詳しくなくても大丈夫ですか？", "acceptedAnswer": {"@type": "Answer", "text": "問題ありません。専門用語を前提にせず、目的や業務から整理します。"}},
+      {"@type": "Question", "name": "ChatGPTやClaudeの使い方だけ相談できますか？", "acceptedAnswer": {"@type": "Answer", "text": "可能です。個人利用から、チーム・組織での業務活用まで対応します。"}},
+      {"@type": "Question", "name": "小さなプロトタイプから始められますか？", "acceptedAnswer": {"@type": "Answer", "text": "はい。最初から大規模開発するのではなく、小さく検証してから広げる進め方を重視しています。試作は2〜4週間が目安で、本開発に進むかはその結果を見て決めていただけます。"}},
+      {"@type": "Question", "name": "開発だけお願いできますか？", "acceptedAnswer": {"@type": "Answer", "text": "内容によって対応可能です。ただし、実際の利用目的や業務を理解した上で設計することを大切にしています。"}},
+      {"@type": "Question", "name": "オンラインで相談できますか？", "acceptedAnswer": {"@type": "Answer", "text": "はい。打ち合わせ・支援ともにオンラインで対応できます。"}},
+      {"@type": "Question", "name": "初回相談は本当に無料ですか？ どこまで話せますか？", "acceptedAnswer": {"@type": "Answer", "text": "無料です（オンライン・30分）。課題の整理と、AIで取り組む価値があるかの見立てまでお伝えします。業務の分析や具体的な設計が必要な場合は、有料の構想整理セッション（5万円・税別・60〜90分）をご案内します。"}},
+      {"@type": "Question", "name": "費用はどのくらいかかりますか？", "acceptedAnswer": {"@type": "Answer", "text": "関わり方ごとの目安を「費用の目安」に載せています。内容によって変わるため、初回のご相談のあとに正式なお見積もりをお出しします。"}},
+      {"@type": "Question", "name": "期間はどのくらいかかりますか？", "acceptedAnswer": {"@type": "Answer", "text": "内容によって変わります。初回のご相談からご提案までは原則1週間以内（内容により2週間ほど）、小さな試作は2〜4週間が目安です。まず小さく試してから広げる進め方をおすすめしています。"}},
+      {"@type": "Question", "name": "どんな契約の形がありますか？", "acceptedAnswer": {"@type": "Answer", "text": "構想整理セッション、試作、月ごとのAI顧問、システム開発の形があります。組み合わせることもできます。"}},
+      {"@type": "Question", "name": "相談したあとは、どう進みますか？", "acceptedAnswer": {"@type": "Answer", "text": "「ご相談の流れ」のとおり、日程のご連絡、初回のオンライン相談、ご提案の順に進みます。ご提案を見てから、進めるかどうかをお決めください。"}},
+      {"@type": "Question", "name": "秘密は守ってもらえますか？", "acceptedAnswer": {"@type": "Answer", "text": "ご相談の内容は外部に出しません。NDA（秘密保持契約）にも対応します。"}}
+    ]
   }
   </script>
 </head>
@@ -52,6 +82,7 @@
         <a href="#cases">実績</a>
         <a href="#strengths">特徴</a>
         <a href="#profile">プロフィール</a>
+        <a href="#pricing">費用</a>
         <a href="#faq">FAQ</a>
         <a class="nav-cta" href="#contact">相談する</a>
       </nav>
@@ -78,11 +109,21 @@
         <aside class="hero-panel" aria-label="くじらAIワークスの支援範囲">
           <p class="panel-label">FROM IDEA TO OPERATION</p>
           <div class="flow">
-            <div><span>01</span><strong>構想</strong><small>やりたいことを整理</small></div>
-            <div><span>02</span><strong>設計</strong><small>業務とAIの役割を決める</small></div>
-            <div><span>03</span><strong>試作</strong><small>小さく作って検証</small></div>
-            <div><span>04</span><strong>実装</strong><small>業務で使える形へ</small></div>
-            <div><span>05</span><strong>運用</strong><small>使いながら改善</small></div>
+            <div class="flow-group">
+              <p class="flow-label">考える</p>
+              <div><span>01</span><strong>構想</strong><small>やりたいことを聞く</small></div>
+              <div><span>02</span><strong>整理</strong><small>課題と業務を整理</small></div>
+            </div>
+            <div class="flow-group">
+              <p class="flow-label">試す</p>
+              <div><span>03</span><strong>AI活用設計</strong><small>AIと人の役割を決める</small></div>
+              <div><span>04</span><strong>試作</strong><small>小さく作って試す</small></div>
+            </div>
+            <div class="flow-group">
+              <p class="flow-label">動かす</p>
+              <div><span>05</span><strong>システム化</strong><small>業務で使える形へ</small></div>
+              <div><span>06</span><strong>運用・改善</strong><small>使いながら育てる</small></div>
+            </div>
           </div>
         </aside>
       </div>
@@ -115,49 +156,58 @@
         <div class="section-heading">
           <p class="eyebrow">SERVICES</p>
           <h2>AIを「使ってみる」から、<br>「仕事で動く」へ。</h2>
-          <p>
-            ツール導入そのものではなく、何に使い、誰が使い、どこまでAIに任せるかを設計します。
-            必要であれば、そのまま試作・開発・運用まで進めます。
-          </p>
+          <ul class="bullets">
+            <li>ツールを入れること自体ではなく、何に使い、誰が使い、どこまでAIに任せるかを設計します。</li>
+            <li>必要であれば、そのまま試作・開発・運用まで進めます。</li>
+          </ul>
         </div>
 
-        <div class="service-grid">
-          <article class="service-card">
-            <span>01</span>
-            <h3>AI顧問・構想整理</h3>
-            <p>経営者・事業責任者の壁打ち相手として、AI活用テーマ、優先順位、ロードマップを整理します。</p>
-            <ul><li>AI活用方針</li><li>ツール選定</li><li>新規サービス構想</li></ul>
-          </article>
-          <article class="service-card">
-            <span>02</span>
-            <h3>AI導入・業務設計</h3>
-            <p>現場の業務を整理し、人・AI・既存システムの役割分担まで具体化します。</p>
-            <ul><li>業務可視化</li><li>AI適用ポイント整理</li><li>運用設計</li></ul>
-          </article>
-          <article class="service-card">
-            <span>03</span>
-            <h3>プロンプト・ワークフロー</h3>
-            <p>単発の便利プロンプトではなく、実務として再現できる入力・判断・出力の流れを設計します。</p>
-            <ul><li>プロンプト設計</li><li>AIワークフロー</li><li>自動化</li></ul>
-          </article>
-          <article class="service-card">
-            <span>04</span>
-            <h3>AIエージェント開発</h3>
-            <p>情報検索、分析、リサーチ、顧客対応などを支援する専用AIエージェントを設計・開発します。</p>
-            <ul><li>RAG</li><li>MCP</li><li>社内ナレッジ活用</li></ul>
-          </article>
-          <article class="service-card">
-            <span>05</span>
-            <h3>AI・Webシステム開発</h3>
-            <p>Webアプリ、データベース、API、外部サービスを組み合わせ、業務で使えるシステムにします。</p>
-            <ul><li>Webアプリ</li><li>データベース</li><li>外部連携</li></ul>
-          </article>
-          <article class="service-card service-card-accent">
-            <span>06</span>
-            <h3>まだ仕様がなくても大丈夫です</h3>
-            <p>「こういうこと、できないかな」という段階から、何を作るべきかを一緒に整理します。</p>
-            <a href="#contact">まず相談する →</a>
-          </article>
+        <div class="cat-grid">
+          <div class="cat-col">
+            <p class="cat-label">考える</p>
+            <article class="service-card">
+              <span>01</span>
+              <h3>AI顧問・構想整理</h3>
+              <p>経営者・事業責任者の壁打ち相手として、AI活用のテーマ、優先順位、ロードマップを整理します。</p>
+              <ul><li>AI活用方針</li><li>ツール選定</li><li>新規サービス構想</li></ul>
+            </article>
+            <article class="service-card">
+              <span>02</span>
+              <h3>AI導入・業務設計</h3>
+              <p>現場の業務を整理し、人・AI・既存システムの役割分担まで具体化します。</p>
+              <ul><li>業務可視化</li><li>AI適用ポイント整理</li><li>運用設計</li></ul>
+            </article>
+          </div>
+          <div class="cat-col">
+            <p class="cat-label">作る</p>
+            <article class="service-card">
+              <span>03</span>
+              <h3>プロンプト・ワークフロー</h3>
+              <p>単発の便利なプロンプトではなく、実務で再現できる入力・判断・出力の流れを設計します。</p>
+              <ul><li>プロンプト設計</li><li>AIワークフロー</li><li>自動化</li></ul>
+            </article>
+            <article class="service-card">
+              <span>04</span>
+              <h3>AIエージェント開発</h3>
+              <p>情報検索、分析、リサーチ、顧客対応などを支援する専用のAIエージェントを設計・開発します。</p>
+              <ul><li>RAG</li><li>MCP</li><li>社内ナレッジ活用</li></ul>
+            </article>
+          </div>
+          <div class="cat-col">
+            <p class="cat-label">仕組みにする</p>
+            <article class="service-card">
+              <span>05</span>
+              <h3>AI・Webシステム開発</h3>
+              <p>Webアプリ、データベース、API、外部サービスを組み合わせ、業務で使えるシステムにします。</p>
+              <ul><li>Webアプリ</li><li>データベース</li><li>外部連携</li></ul>
+            </article>
+            <article class="service-card service-card-accent">
+              <span>06</span>
+              <h3>まだ仕様がなくても大丈夫です</h3>
+              <p>「こういうこと、できないかな」という段階から、何を作るべきかを一緒に整理します。</p>
+              <a href="#contact">まず相談する →</a>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -169,50 +219,68 @@
             <p class="eyebrow">CASE STUDIES</p>
             <h2>支援・開発実績</h2>
           </div>
-          <p class="note">※守秘義務のため、企業名・サービス名を伏せ、一部内容を一般化して掲載しています。</p>
+          <p class="note">※守秘義務のため、企業名・サービス名を伏せ、一部内容を一般化して掲載しています。効果の数値は、お客様の許諾を得たものに限り掲載します。</p>
         </div>
 
+        <h3 class="case-group-heading">システム構築・AI開発</h3>
         <div class="case-grid">
-          <article class="case-card">
-            <p class="case-category">広告・クリエイティブ</p>
-            <h3>社内クリエイティブ知見を活用するAIシステム</h3>
-            <p>過去の制作情報や社内ナレッジを活用し、企画・制作業務を支援するAIシステムを設計・開発。構想整理からWebアプリ、データ、外部連携まで一貫して対応。</p>
-            <div class="tags"><span>AI企画</span><span>UX設計</span><span>Web開発</span><span>AIエージェント</span></div>
-          </article>
-
-          <article class="case-card">
-            <p class="case-category">マーケティング・VOC</p>
-            <h3>顧客の声を分析・活用するAIエージェント</h3>
-            <p>大量の顧客フィードバックを整理・分類し、示唆抽出まで支援するAIワークフローを構築。マーケティングや商品改善に接続できる形へ設計。</p>
-            <div class="tags"><span>AI分析</span><span>データ処理</span><span>業務設計</span></div>
-          </article>
-
-          <article class="case-card">
-            <p class="case-category">PR・広報</p>
-            <h3>経営層・事業責任者向けAI顧問</h3>
-            <p>AI活用方針、社内導入、業務適用、サービス構想を継続支援。ツール紹介ではなく、経営・事業の文脈から活用方法を整理。</p>
-            <div class="tags"><span>AI顧問</span><span>AI戦略</span><span>導入支援</span></div>
-          </article>
-
-          <article class="case-card">
-            <p class="case-category">士業・専門サービス</p>
-            <h3>専門業務を支援するAI業務システム</h3>
-            <p>専門情報や業務データを活用し、情報処理・判断支援を行う専用システムを開発。AI、Webアプリ、データベース、ワークフローを統合。</p>
-            <div class="tags"><span>要件整理</span><span>AI設計</span><span>DB</span><span>自動化</span></div>
-          </article>
-
           <article class="case-card">
             <p class="case-category">店舗・現場サービス</p>
             <h3>スタッフ業務を一元化する業務支援システム</h3>
-            <p>スタッフ配置、報酬・交通費計算、情報共有など、複数の現場業務を整理し、一つのシステムで扱える形へ。</p>
+            <ul class="bullets"><li>スタッフ配置、報酬・交通費の計算、情報共有など、複数の現場業務を整理しました。</li><li>それらを一つのシステムで扱えるようにしました。</li></ul>
+            <p class="case-result"><strong>変わったこと</strong>手作業だった交通費・報酬の計算が、スタッフの入力から自動で算出され、毎月の精算で使われています。</p>
             <div class="tags"><span>業務整理</span><span>Web開発</span><span>データ管理</span></div>
           </article>
 
           <article class="case-card">
             <p class="case-category">新規事業</p>
             <h3>AIサービスの構想を実装可能な形へ</h3>
-            <p>アイデア段階から、利用者・業務・データ・AIの役割を整理。必要な機能と技術構成を具体化し、プロトタイプへ落とし込みます。</p>
+            <ul class="bullets"><li>アイデア段階から、利用者・業務・データ・AIの役割を整理しました。</li><li>必要な機能と技術構成を具体化し、試作に落とし込みました。</li></ul>
+            <p class="case-result"><strong>変わったこと</strong>アイデア段階だった構想が、利用者が触れる形で動き、提供を始められました。</p>
             <div class="tags"><span>壁打ち</span><span>事業整理</span><span>要件定義</span></div>
+          </article>
+
+          <article class="case-card">
+            <p class="case-category">広告・クリエイティブ</p>
+            <h3>社内クリエイティブ知見を活用するAIシステム</h3>
+            <ul class="bullets"><li>過去の制作情報や社内ナレッジを使い、企画・制作の業務を支援するAIシステムを設計・開発しました。</li><li>構想の整理から、Webアプリ、データ、外部連携まで一貫して対応しました。</li></ul>
+            <p class="case-result"><strong>変わったこと</strong>社内に散らばっていた制作の知見を、企画の初動で引き出して比べられるようになりました。</p>
+            <div class="tags"><span>AI企画</span><span>UX設計</span><span>Web開発</span><span>AIエージェント</span></div>
+          </article>
+
+          <article class="case-card">
+            <p class="case-category">マーケティング</p>
+            <h3>顧客の声を分析・活用するAIシステム</h3>
+            <ul class="bullets"><li>大量の顧客フィードバックを整理・分類し、示唆を引き出すまでを支援するAIワークフローを作りました。</li><li>マーケティングや商品改善につなげられる形に設計しました。</li></ul>
+            <p class="case-result"><strong>変わったこと</strong>担当者の経験に頼っていた分析の流れが、手順として共有できる形になりました。</p>
+            <div class="tags"><span>AI分析</span><span>データ処理</span><span>業務設計</span></div>
+          </article>
+
+          <article class="case-card">
+            <p class="case-category">士業・専門サービス</p>
+            <h3>専門業務を支援するAI業務システム</h3>
+            <ul class="bullets"><li>専門情報や業務データを使い、情報処理と判断を支援する専用システムを開発しました。</li><li>AI、Webアプリ、データベース、ワークフローを一つにまとめました。</li></ul>
+            <p class="case-result"><strong>変わったこと</strong>判断の前段にある情報処理を仕組みに任せ、専門家が判断に時間を使える形にしました。</p>
+            <div class="tags"><span>要件整理</span><span>AI設計</span><span>DB</span><span>自動化</span></div>
+          </article>
+
+          <article class="case-card">
+            <p class="case-category">医療・歯科</p>
+            <h3>画像から判定するAIプロンプトの開発</h3>
+            <ul class="bullets"><li>歯科技工の業務システムに組み込むためのプロンプトを設計・開発しました。</li><li>口の中とシェードガイド（色見本）の写真から、最も近い色を判定します。</li></ul>
+            <p class="case-result"><strong>変わったこと</strong>目で見て判断していた色合わせを、写真から判定する手順としてシステムに組み込める形にしました。</p>
+            <div class="tags"><span>プロンプト設計</span><span>画像判定</span></div>
+          </article>
+        </div>
+
+        <h3 class="case-group-heading">AI顧問</h3>
+        <div class="case-grid case-grid-single">
+          <article class="case-card">
+            <p class="case-category">経営者・事業責任者（複数社）</p>
+            <h3>経営層・事業責任者向けAI顧問</h3>
+            <ul class="bullets"><li>AI活用の方針、社内導入、業務への適用、サービス構想を継続して支援しています。</li><li>ツールの紹介ではなく、経営・事業の文脈から活用方法を整理します。</li></ul>
+            <p class="case-result"><strong>変わったこと</strong>「AIで何かやりたい」が、社内で取り組むテーマと順番に整理され、定例で前に進む形になりました。</p>
+            <div class="tags"><span>AI顧問</span><span>AI戦略</span><span>導入支援</span></div>
           </article>
         </div>
       </div>
@@ -223,13 +291,13 @@
         <div class="section-heading">
           <p class="eyebrow">WHY KUJIRA AI WORKS</p>
           <h2>相談から実装まで、<br>間を切らない。</h2>
-          <p>
-            AI活用では、経営者の意図、現場の業務、技術の実装が別々に扱われると、途中でズレが生まれます。
-            くじらAIワークスでは、その間を一続きで考えます。
-          </p>
+          <ul class="bullets">
+            <li>AI活用では、経営者の意図、現場の業務、技術の実装が別々に扱われると、途中でズレが生まれます。</li>
+            <li>くじらAIワークスでは、その間を一続きで考えます。</li>
+          </ul>
         </div>
 
-        <div class="strength-list">
+        <div class="strength-list strength-grid">
           <article><span>01</span><div><h3>まだ言語化されていない構想から</h3><p>仕様書がなくても大丈夫です。「こんなことができたら」から始めます。</p></div></article>
           <article><span>02</span><div><h3>AIだけで考えない</h3><p>AI、人、既存ツール、業務フローを組み合わせ、現実的な方法を選びます。</p></div></article>
           <article><span>03</span><div><h3>相談だけで終わらない</h3><p>必要ならそのままプロトタイプ、AIエージェント、Webシステムまで実装します。</p></div></article>
@@ -245,14 +313,29 @@
           <h2>「作る前」を、大切にしています。</h2>
         </div>
 
-        <ol class="process">
-          <li><span>01</span><div><strong>構想</strong><p>やりたいこと、困っていること、アイデアを聞きます。</p></div></li>
-          <li><span>02</span><div><strong>整理</strong><p>課題、利用者、業務、情報、制約を整理します。</p></div></li>
-          <li><span>03</span><div><strong>AI活用設計</strong><p>AIに任せる部分と、人が判断する部分を設計します。</p></div></li>
-          <li><span>04</span><div><strong>プロトタイプ</strong><p>小さく作り、実際に使って検証します。</p></div></li>
-          <li><span>05</span><div><strong>システム化</strong><p>必要に応じて専用システムへ発展させます。</p></div></li>
-          <li><span>06</span><div><strong>運用・改善</strong><p>利用状況を見ながら継続的に改善します。</p></div></li>
-        </ol>
+        <div class="process-grid">
+          <div class="process-col">
+            <p class="cat-label">考える</p>
+            <ol class="process">
+              <li><span>01</span><div><strong>構想</strong><ul class="bullets"><li>やりたいこと、困っていること、アイデアを聞きます。</li><li>まだ言葉になっていなくても大丈夫です。</li></ul></div></li>
+              <li><span>02</span><div><strong>整理</strong><ul class="bullets"><li>課題、使う人、業務の流れ、扱う情報、制約を整理します。</li><li>どこから手を付けるかを決めます。</li></ul></div></li>
+            </ol>
+          </div>
+          <div class="process-col">
+            <p class="cat-label">試す</p>
+            <ol class="process">
+              <li><span>03</span><div><strong>AI活用設計</strong><ul class="bullets"><li>AIに任せる部分と、人が判断する部分を分けます。</li><li>使う道具と進め方を設計します。</li></ul></div></li>
+              <li><span>04</span><div><strong>試作</strong><ul class="bullets"><li>最初に「何ができたら成功か」を決めます。</li><li>1つの業務・1つの機能に絞り、2〜4週間を目安に動くものを作ります。</li><li>本開発に進むかどうかは、試作を触ってから判断いただけます。</li></ul></div></li>
+            </ol>
+          </div>
+          <div class="process-col">
+            <p class="cat-label">動かす</p>
+            <ol class="process">
+              <li><span>05</span><div><strong>システム化</strong><ul class="bullets"><li>効果が確かめられたものを、業務で使い続けられるシステムに仕上げます。</li></ul></div></li>
+              <li><span>06</span><div><strong>運用・改善</strong><ul class="bullets"><li>使われ方を見ながら、続けて改善します。</li></ul></div></li>
+            </ol>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -302,6 +385,78 @@
       </div>
     </section>
 
+    <section class="section" id="flow">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">HOW TO START</p>
+          <h2>ご相談の流れ</h2>
+          <ul class="bullets">
+            <li>「まだ何を作ればいいかわからない」段階からご相談いただけます。</li>
+            <li>初回のご相談で、課題と、AIでできること・しない方がいいことを一緒に整理します。</li>
+          </ul>
+        </div>
+
+        <div class="cat-grid">
+          <div class="cat-col">
+            <p class="cat-label">申し込む</p>
+            <article class="step-card"><span>01</span><h3>ご相談内容を送る</h3><ul class="bullets"><li>フォーム、またはXのDMでお送りください。</li><li>会社・業種、困っていること、やりたいこと、ご希望の時期を書いてください。</li><li>まとまっていなくても構いません。</li></ul></article>
+            <article class="step-card"><span>02</span><h3>日程のご連絡</h3><ul class="bullets"><li>2営業日以内に、初回相談の日程候補をお返しします。</li></ul></article>
+          </div>
+          <div class="cat-col">
+            <p class="cat-label">話す</p>
+            <article class="step-card step-card-accent"><span>03</span><h3>初回のオンライン相談（無料・30分）</h3><ul class="bullets"><li>はじめに、当日の進め方をお伝えします。</li><li>今の状況と、目指したい状態を伺います。</li><li>AIで取り組む価値があるか、何をしない方がいいかの見立てを、その場でお伝えします。</li><li>その場で売り込むことはありません。</li><li>業務の分析や具体的な設計まで必要な場合は、有料の構想整理セッション（60〜90分）をご案内することがあります。</li><li>NDA（秘密保持契約）にも対応します。</li></ul></article>
+          </div>
+          <div class="cat-col">
+            <p class="cat-label">始める</p>
+            <article class="step-card"><span>04</span><h3>ご提案</h3><ul class="bullets"><li>初回相談から原則1週間以内に、提案書をお送りします。</li><li>業務の整理や資料の確認が必要な場合は、2週間ほどいただきます。</li><li>提案書には、進め方・関わり方・費用の目安をまとめます。</li></ul></article>
+            <article class="step-card"><span>05</span><h3>小さく始める</h3><ul class="bullets"><li>まずは試作や短期間の顧問など、小さな形から始められます。</li><li>効果を確かめてから広げます。</li></ul></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="pricing">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">PRICING</p>
+          <h2>費用の目安（税別）</h2>
+          <ul class="bullets">
+            <li>内容によって変わるため、目安としてご覧ください。</li>
+            <li>初回のご相談（オンライン・30分）は無料です。</li>
+          </ul>
+        </div>
+
+        <div class="fee-grid">
+          <article class="fee-card">
+            <h3>構想整理セッション</h3>
+            <p class="fee-price">5万円<small>／60〜90分</small></p>
+            <ul class="bullets"><li>業務の流れと課題を整理します。</li><li>AIで取り組むテーマと順番を決めます。</li><li>ツールの選び方と進め方を助言します。</li></ul>
+          </article>
+          <article class="fee-card">
+            <h3>試作（プロトタイプ）</h3>
+            <p class="fee-price">30万円〜<small>／2〜4週間</small></p>
+            <ul class="bullets"><li>業務のヒアリング（聞き取り）を行います。</li><li>1つの業務・1つの機能に絞った、動く試作を作ります。</li><li>本開発に進むかの判断材料をお渡しします。</li><li>修正の回数は、試作の内容に合わせて着手前に取り決めます。</li></ul>
+          </article>
+          <article class="fee-card">
+            <h3>AI顧問</h3>
+            <p class="fee-price">月額10万円〜<small>／3か月単位</small></p>
+            <ul class="bullets"><li>月2回、オンラインで定例を行います。</li><li>定例のあいだも、チャットでご相談いただけます。</li></ul>
+          </article>
+          <article class="fee-card fee-card-wide">
+            <div>
+              <h3>AIエージェント・システム開発</h3>
+              <p class="fee-price">個別にお見積もり</p>
+            </div>
+            <ul class="bullets"><li>試作の結果と要件をもとに、範囲・期間・金額を提案書でお示しします。</li></ul>
+          </article>
+        </div>
+        <ul class="bullets fee-note">
+          <li>金額は、対象にする業務の数、データの準備状況、連携するサービスの数によって変わります。</li>
+          <li>受けられる件数に限りがあるため、着手の時期もあわせてご相談ください。</li>
+        </ul>
+      </div>
+    </section>
+
     <section class="section" id="faq">
       <div class="container narrow">
         <div class="section-heading">
@@ -309,31 +464,70 @@
           <h2>よくあるご質問</h2>
         </div>
 
-        <div class="faq-list">
-          <details>
-            <summary>まだ何を作るか決まっていません。相談できますか？</summary>
-            <p>はい。むしろ「何を作るべきか」「そもそも作る必要があるか」を整理するところから対応しています。</p>
-          </details>
-          <details>
-            <summary>AIについて詳しくなくても大丈夫ですか？</summary>
-            <p>問題ありません。専門用語を前提にせず、目的や業務から整理します。</p>
-          </details>
-          <details>
-            <summary>ChatGPTやClaudeの使い方だけ相談できますか？</summary>
-            <p>可能です。個人利用から、チーム・組織での業務活用まで対応します。</p>
-          </details>
-          <details>
-            <summary>小さなプロトタイプから始められますか？</summary>
-            <p>はい。最初から大規模開発するのではなく、小さく検証してから広げる進め方を重視しています。</p>
-          </details>
-          <details>
-            <summary>開発だけお願いできますか？</summary>
-            <p>内容によって対応可能です。ただし、実際の利用目的や業務を理解した上で設計することを大切にしています。</p>
-          </details>
-          <details>
-            <summary>オンラインで相談できますか？</summary>
-            <p>はい。打ち合わせ・支援ともにオンラインで対応できます。</p>
-          </details>
+        <div class="faq-groups">
+          <div class="faq-group">
+            <p class="cat-label">ご相談について</p>
+            <div class="faq-list">
+              <details>
+              <summary>まだ何を作るか決まっていません。相談できますか？</summary>
+              <p>はい。むしろ「何を作るべきか」「そもそも作る必要があるか」を整理するところから対応しています。</p>
+              </details>
+              <details>
+              <summary>AIについて詳しくなくても大丈夫ですか？</summary>
+              <p>問題ありません。専門用語を前提にせず、目的や業務から整理します。</p>
+              </details>
+              <details>
+              <summary>ChatGPTやClaudeの使い方だけ相談できますか？</summary>
+              <p>可能です。個人利用から、チーム・組織での業務活用まで対応します。</p>
+              </details>
+              <details>
+              <summary>初回相談は本当に無料ですか？ どこまで話せますか？</summary>
+              <ul class="bullets"><li>無料です（オンライン・30分）。</li><li>課題の整理と、AIで取り組む価値があるかの見立てまでお伝えします。</li><li>業務の分析や具体的な設計が必要な場合は、有料の構想整理セッション（5万円・税別・60〜90分）をご案内します。</li></ul>
+              </details>
+            </div>
+          </div>
+          <div class="faq-group">
+            <p class="cat-label">費用・期間・契約</p>
+            <div class="faq-list">
+              <details>
+              <summary>費用はどのくらいかかりますか？</summary>
+              <ul class="bullets"><li>関わり方ごとの目安を「<a href="#pricing">費用の目安</a>」に載せています。</li><li>内容によって変わるため、初回のご相談のあとに正式なお見積もりをお出しします。</li></ul>
+              </details>
+              <details>
+              <summary>期間はどのくらいかかりますか？</summary>
+              <ul class="bullets"><li>初回のご相談からご提案までは、原則1週間以内です（内容により2週間ほど）。</li><li>小さな試作は、2〜4週間が目安です。</li><li>まず小さく試してから広げる進め方をおすすめしています。</li></ul>
+              </details>
+              <details>
+              <summary>どんな契約の形がありますか？</summary>
+              <ul class="bullets"><li>構想整理セッション、試作、月ごとのAI顧問、システム開発の形があります。</li><li>組み合わせることもできます。</li></ul>
+              </details>
+              <details>
+              <summary>秘密は守ってもらえますか？</summary>
+              <ul class="bullets"><li>ご相談の内容は外部に出しません。</li><li>NDA（秘密保持契約）にも対応します。</li></ul>
+              </details>
+            </div>
+          </div>
+          <div class="faq-group">
+            <p class="cat-label">進め方・対応範囲</p>
+            <div class="faq-list">
+              <details>
+              <summary>小さなプロトタイプから始められますか？</summary>
+              <ul class="bullets"><li>はい。最初から大規模に開発するのではなく、小さく検証してから広げる進め方を重視しています。</li><li>試作は2〜4週間が目安です。</li><li>本開発に進むかは、その結果を見て決めていただけます。</li></ul>
+              </details>
+              <details>
+              <summary>開発だけお願いできますか？</summary>
+              <ul class="bullets"><li>内容によって対応できます。</li><li>ただし、実際の利用目的や業務を理解したうえで設計することを大切にしています。</li></ul>
+              </details>
+              <details>
+              <summary>オンラインで相談できますか？</summary>
+              <p>はい。打ち合わせ・支援ともにオンラインで対応できます。</p>
+              </details>
+              <details>
+              <summary>相談したあとは、どう進みますか？</summary>
+              <ul class="bullets"><li>「<a href="#flow">ご相談の流れ</a>」のとおり、日程のご連絡、初回のオンライン相談、ご提案の順に進みます。</li><li>ご提案を見てから、進めるかどうかをお決めください。</li></ul>
+              </details>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -347,6 +541,8 @@
         <dl>
           <div><dt>会社名</dt><dd>株式会社くじらAIワークス</dd></div>
           <div><dt>代表</dt><dd>渡邉 裕司</dd></div>
+          <div><dt>所在地</dt><dd>長野県長野市</dd></div>
+          <div><dt>設立</dt><dd>2026年1月</dd></div>
           <div>
             <dt>事業内容</dt>
             <dd>AI顧問・AI活用支援 / AI導入コンサルティング / 業務設計 / AIエージェント設計・開発 / AI・Webシステム開発 / プロンプト・AIワークフロー設計</dd>
