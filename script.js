@@ -40,3 +40,15 @@ if ('IntersectionObserver' in window && revealTargets.length) {
   }, { rootMargin: '0px 0px -10% 0px' });
   revealTargets.forEach((el) => observer.observe(el));
 }
+
+// スマホの固定「無料で相談する」ボタン：ヒーローを過ぎたら出し、問い合わせ欄が見えたら隠す
+const stickyCta = document.querySelector('.sticky-cta');
+const heroSection = document.querySelector('.hero');
+const contactSection = document.getElementById('contact');
+if (stickyCta && heroSection && contactSection && 'IntersectionObserver' in window) {
+  let pastHero = false;
+  let atContact = false;
+  const update = () => stickyCta.classList.toggle('is-shown', pastHero && !atContact);
+  new IntersectionObserver(([entry]) => { pastHero = !entry.isIntersecting; update(); }).observe(heroSection);
+  new IntersectionObserver(([entry]) => { atContact = entry.isIntersecting; update(); }).observe(contactSection);
+}
