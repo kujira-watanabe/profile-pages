@@ -582,6 +582,26 @@ img { max-width: 100%; }
   color: var(--ink);
 }
 
+.profile-book {
+  margin-top: 40px;
+  padding-top: 32px;
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 28px;
+  align-items: start;
+}
+.profile-book-cover img {
+  width: 120px;
+  height: auto;
+  display: block;
+  border-radius: 3px;
+  box-shadow: 0 10px 24px rgba(16, 32, 42, .18);
+}
+.profile-book-body h3 { margin: 6px 0 12px; font-family: var(--serif); font-size: 22px; color: var(--ink); }
+.profile-book-body p { margin: 0 0 18px; font-size: 15px; line-height: 1.9; }
+.profile-book-body .button { font-size: 14px; }
+
 .tech-groups {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -813,6 +833,9 @@ img { max-width: 100%; }
   .strength-list h3 { font-size: 20px; }
   .case-grid-single { max-width: none; }
   .profile-intro h2 { font-size: 42px; }
+  .profile-book { grid-template-columns: 96px 1fr; gap: 18px; }
+  .profile-book-body h3 { font-size: 19px; }
+  .profile-book-cover img { width: 96px; }
   .profile-body blockquote { font-size: 17px; }
   .company dl div { grid-template-columns: 1fr; gap: 5px; }
   .footer-inner { display: block; }
